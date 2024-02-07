@@ -22,33 +22,33 @@
 
   - Click on the drop down next to folder, and select Download
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/3.png)
+![](../images/3.png)
 
 - This will create a zip file and downloads 2 files
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/4.png)
+![](../images/4.png)
 
 - Unzip the downloaded zip file
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/5.png)
+![](../images/5.png)
 
 - In the airlines-csv directory, create a New Directory named “flights”
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/6.png)
+![](../images/6.png)
 
 - Rename the flights-002.csv file to “flights.csv”
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/7.png)
+![](../images/7.png)
 
 - Move flights.csv file to the airlines-csv/flights directory
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/8.png)
+![](../images/8.png)
 
 - In the AWS Console for s3 
 
   - Navigate to the bucket used for creating the environment
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/9.png)
+![](../images/9.png)
 
 - Create a folder named - iceberg-hott
 
@@ -56,11 +56,11 @@
 
 - \[In AWS S3, Upload] With the folder you just created selected, click on Upload, on the Upload screen click “Add folder” button and browse your computer to the  airlines-csv directory (download from Google Drive)
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/10.png)
+![](../images/10.png)
 
 - Browse each of the folder to make sure the CSV file in the folders - flights, planes, airlines, and airports
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/11.png) >>![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/12.png)
+![](../images/11.png) >>![](../images/12.png)
 
 
 ## Create CDW Virtual Warehouses<a id="create-cdw-virtual-warehouses"></a>
@@ -110,7 +110,7 @@
 
     - HUE has determined that there are 2 parameters that need to be entered, in the “user\_id” box enter your user id; and in the “cdp\_env\_bucket” box enter the CDP Environment bucket name
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/13.png)
+![](../images/13.png)
 
 ```
     -- CREATE DATABASES

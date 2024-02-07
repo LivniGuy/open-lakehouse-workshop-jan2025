@@ -14,5 +14,5 @@
 
     - All other options can stay default
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/37.png)
+![](../images/37.png)
 

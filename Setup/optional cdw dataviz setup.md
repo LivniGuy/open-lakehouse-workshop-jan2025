@@ -16,7 +16,7 @@
 
     - Admin Groups: \<sales\_process\_demo-admins> (replace with the group you use, if you choose to use another Group)
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/24.png)
+![](../images/24.png)
 
 - Create a Connection in CDV to the  
 
@@ -28,7 +28,7 @@
 
   - In CDV, create a Connection named **Airlines Impala VW**
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/25.png)
+![](../images/25.png)
 
 - In CDW Warehouse select the Impala CDW VW named “**\<user\_id>**-iceberg-impala-vw”
 
@@ -42,7 +42,7 @@
 
   - Click on the “Import Visual Artifacts”
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/26.png)
+![](../images/26.png)
 
 - Select the JSON file - **iceberg\_runbook\_cdv\_v1.json** 
 
@@ -50,15 +50,15 @@
 
   - Click on the IMPORT button
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/27.png)
+![](../images/27.png)
 
 - Click the ACCEPT AND IMPORT BUTTON
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/28.png)  >>>  ![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/29.png)
+![](../images/28.png)  >>>  ![](../images/29.png)
 
 - Click on the DATA tab, you will now have a Dataset named “Airlines Lakehouse”
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/30.png)
+![](../images/30.png)
 
 - Click on the “Airlines Lakehouse” to open the Dataset
 
@@ -66,7 +66,7 @@
 
   - To use this Dataset with the Database **\<user\_id>**\_airlines, we need to modify the data model so that all tables point to the tables that you created previously in HUE
 
-    - Click on the ![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/31.png)button
+    - Click on the ![](../images/31.png)button
 
     - For each of the 4 tables in the Data Model, perform the following
 
@@ -78,7 +78,7 @@
 
     - Click on the SHOW DATA button, to preview the data. You should see data populated for each of the tables, like the following
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/32.png)
+![](../images/32.png)
 
 - Click on the SAVE button to save changes to the Data Model
 
@@ -88,9 +88,9 @@
 
   - Click on the Dashboard named “Airlines Dashboard”
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/33.png)
+![](../images/33.png)
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/34.png)
+![](../images/34.png)
 
 - If the Dashboard is populated then the setup is complete
 

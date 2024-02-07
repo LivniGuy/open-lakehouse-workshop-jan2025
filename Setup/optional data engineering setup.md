@@ -8,7 +8,7 @@
 
   - Enable Public Load balancer: checked
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/35.png)
+![](../images/35.png)
 
 - Add a New Virtual Cluster, replace \<user-id> with your user id
 
@@ -20,5 +20,5 @@
 
   - Other settings can remain default
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/36.png)
+![](../images/36.png)
 
