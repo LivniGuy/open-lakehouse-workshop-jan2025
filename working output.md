@@ -187,7 +187,7 @@ When completed it should look like the following
 
 
 
-# CDE - Multi-function Analytics<a id="cde---multi-function-analytics"></a>
+# CDE - Multi-function Analytics
 
 Since Iceberg is Engine Agnostic, we are not locked into using only one engine to interact with Iceberg, in this part of the demo we will use Spark in CDE to add additional data to the Flights table we created in the previous demo steps using CDW (HUE Hive).
 
@@ -195,32 +195,32 @@ Since Iceberg is Engine Agnostic, we are not locked into using only one engine t
 
 - Open a Text Editor or IDE (I used VS Code from Microsoft).  Copy and paste the following code replacing \<user-id> with your user id.
 
-<!---->
+```
+#****************************************************************************
+# 
+#  ICEBERG (Multi-function Analytics) - LOAD DATA  into table created in CDW
+#
+#***************************************************************************/
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import *
+import pyspark.sql.functions as F
 
-    #****************************************************************************
-    # 
-    #  ICEBERG (Multi-function Analytics) - LOAD DATA  into table created in CDW
-    #
-    #***************************************************************************/
-    from pyspark.sql import SparkSession
-    from pyspark.sql.functions import *
-    import pyspark.sql.functions as F
+#---------------------------------------------------
+#               CREATE SPARK SESSION
+#---------------------------------------------------
+spark = SparkSession.builder.appName('Ingest').getOrCreate()
 
-    #---------------------------------------------------
-    #               CREATE SPARK SESSION
-    #---------------------------------------------------
-    spark = SparkSession.builder.appName('Ingest').getOrCreate()
+#-----------------------------------------------------------------------------------
+# LOAD DATA 1 YEAR (2008) FROM RAW DATA CSV FILES ON AWS S3 CLOUD STORAGE
+#          A  TABLE IS ALREADY CREATED ON TOP OF THE CSV FILE
+#          RUN INSERT INTO ICEBERG TABLE FROM THE RAW CSV TABLE
+#
+#-----------------------------------------------------------------------------------
+print("JOB STARTED...")
+spark.sql("INSERT INTO <user-id>_airlines.flights SELECT * FROM <user-id>_airlines_csv.flights_csv WHERE year = 2008 ")
 
-    #-----------------------------------------------------------------------------------
-    # LOAD DATA 1 YEAR (2008) FROM RAW DATA CSV FILES ON AWS S3 CLOUD STORAGE
-    #          A  TABLE IS ALREADY CREATED ON TOP OF THE CSV FILE
-    #          RUN INSERT INTO ICEBERG TABLE FROM THE RAW CSV TABLE
-    #
-    #-----------------------------------------------------------------------------------
-    print("JOB STARTED...")
-    spark.sql("INSERT INTO <user-id>_airlines.flights SELECT * FROM <user-id>_airlines_csv.flights_csv WHERE year = 2008 ")
-
-    print("JOB COMPLETED.\n\n")
+print("JOB COMPLETED.\n\n")
+```
 
 - Save file as “IcebergAdd2008.py”, in a location that you remember
 
@@ -283,20 +283,19 @@ Leave Advanced Options and Scheduling alone (default settings)
 
   - So, let’s see about the Unique Tickets table.  We’ll see that this table is still in Hive Table Format - see SerDe Library = ParquetHiveSerDe (not the Iceberg SerDe).  So we have a Dashboard that is combining both table formats in a single Dashboard
 
-<!---->
-
+```
     --
     -- [optional] SINGLE QUERY USING ICEBERG & HIVE TABLE FORMAT
     --            Uses CDV Dashboard, could also just query in HUE
     -- DESCRIBE FORMATTED ${user_id}_airlines.flights;
     DESCRIBE FORMATTED ${user_id}_airlines.unique_tickets;
+```
 
 ![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/65.png)
 
 - Now let’s run a query that combines this Hive Table with an Iceberg Table
 
-<!---->
-
+```
     -- Query combining Hive Table Format (unique_tickets) and Iceberg Table Format (flights)
     SELECT 
     t.leg1origin,
@@ -307,6 +306,7 @@ Leave Advanced Options and Scheduling alone (default settings)
       t.leg1origin = f.origin
       AND t.leg1dest = f.dest
     GROUP BY t.leg1origin, f.dest;
+```
 
 - **VALUE**: combine Iceberg with Hive table formats, means you can convert to use Iceberg where it makes sense and also can migrate over time vs. having to migrate at the same time
 
@@ -326,7 +326,7 @@ This section shows how you can use Cloudera Data Flow (CDF) to stream data into 
 - Click on the Dashboard named “**A**”
 
 
-# \[OPTIONAL] Iceberg Table Format Table(s) joined with Hive Table Format Table(s) using Data Viz<a id="optional-iceberg-table-format-tables-joined-with-hive-table-format-tables-using-data-viz"></a>
+# \[OPTIONAL] Iceberg Table Format Table(s) joined with Hive Table Format Table(s) using Data Viz
 
 It is NOT a requirement to convert all tables to Iceberg Table format.  In fact, this can be something that you move to over time.
 
