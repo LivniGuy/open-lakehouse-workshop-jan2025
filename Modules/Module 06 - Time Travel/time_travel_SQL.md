@@ -6,8 +6,7 @@ In the previous steps we have been loading data into the flights Iceberg table.�
 
 - In the next few steps execute the following in HUE for Impala VW
 
-<!---->
-
+```
     DESCRIBE HISTORY ${user_id}_airlines.flights;
 
     -- SELECT DATA USING TIMESTAMP FOR SNAPSHOT
@@ -23,20 +22,21 @@ In the previous steps we have been loading data into the flights Iceberg table.�
       FOR SYSTEM_VERSION AS OF ${snapshot_id}
     GROUP BY year
     ORDER BY year desc;
+```
 
 - Highlight and Execute the “DESCRIBE HISTORY” line.  This returns all of the available Snapshots for the flight Iceberg table.  There were 2 Snapshots automatically captured each time we loaded data
 
-![](../images/59.png)
+![59.png](../../images/59.png)
 
 - In the create\_ts parameter box enter a date/time (this can be relative or specific timestamp) in the orange box under creation\_time, in this example I picked a time between the 2 snapshots of 2022-11-15 21:50:00
 
 - In the snapshot\_id parameter box enter the number in the blue box under snapshot\_id, in this example it is 7116728088845144567
 
-![](../images/60.png)
+![60.png](../../images/60.png)
 
 - Highlight and Execute the Query with the “FOR SYSTEM\_TIME AS OF”.  You can use a specific timestamp or you can use a relative timestamp and Iceberg will take the Snapshot that was in effect as of that time specified
 
-![](../images/61.png)
+![61.png](../../images/61.png)
 
 - Highlight and Execute the Query with the “FOR SYSTEM\_VERSION AS OF”.  This uses the specific snapshot\_id specified.
 

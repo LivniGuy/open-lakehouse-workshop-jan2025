@@ -39,21 +39,17 @@ print("JOB COMPLETED.\n\n")
 
 - Create a new Job in CDE, using the following, replacing \<user-id> with your user id.  Once completed click on “Create and Run” button
 
-Job Type: Spark 3.2.0
+   - Job Type: Spark 3.2.0
+   - Name: **\<user-id>**-IcebergAdd2008 
+   - Application File: File
+   - Upload File: IcebergAdd2008.py (click on upload file, and browse to find your file)
+   - Select a Resource: (select) Create a Resource
 
-Name: **\<user-id>**-IcebergAdd2008 
-
-Application File: File
-
-Upload File: IcebergAdd2008.py (click on upload file, and browse to find your file)
-
-Select a Resource: (select) Create a Resource
-
-Resource Name: **\<user-id>**-IcebergAdd2008
+   - Resource Name: **\<user-id>**-IcebergAdd2008
 
 Configurations - 
 
-spark.kerberos.access.hadoopFileSystems = s3a://**\<cdp-bucket>**
+   - spark.kerberos.access.hadoopFileSystems = s3a://**\<cdp-bucket>**
 
 Select Spark 3.2.0
 

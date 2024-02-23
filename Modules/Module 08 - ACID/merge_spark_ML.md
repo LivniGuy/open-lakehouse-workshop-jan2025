@@ -24,7 +24,7 @@ In this section use CML to run though some of the Iceberg features using Spark a
 
     - Check Open in Editor
 
-![](../images/66.png)
+![66.png](../../images/66.png)
 
 - Start New Session
 
@@ -34,17 +34,17 @@ In this section use CML to run though some of the Iceberg features using Spark a
 
   - Enable Spark, and select Spark 3.2.0 (Spark 3 is required for Iceberg functionality)
 
-![](../images/67.png)
+![67.png](../../images/67.png)
 
 - From the Connection Code Snippet find and select the tile with TYPE = “Spark Data Lake”
 
-  - Click the ![](../images/68.png)button in the top right corner of the Code Snippet and click Close
+  - Click the ![68.png](../../images/68.png)button in the top right corner of the Code Snippet and click Close
 
-![](../images/69.png)
+![69.png](../../images/69.png)
 
 - When you are back in the Workbench, paste the code into the Editor
 
-![](../images/70.png)
+![70.png](../../images/70.png)
 
 - Copy paste the following code, replacing \<user-id> with your user id, into the Workbench Editor after the code you copied connecting to the Spark Connection (from above screen you would start on line 11).  To summarize what this code will do: 1) create an Iceberg table, 2) load data into Iceberg table, and 3) updates a value in a row (ACID MERGE) - changes “United Airlines Inc.” to “Adrenaline Airways”.  WOW!!! What a Ride!!!! 
 
@@ -76,9 +76,9 @@ In this section use CML to run though some of the Iceberg features using Spark a
 
 - Once you’ve pasted the code at the end of the connection click on Run > Run All
 
-![](../images/71.png)
+![71.png](../../images/71.png)
 
 -  The Session output will show the following
 
-![](../images/72.png)
+![72.png](../../images/72.png)
 

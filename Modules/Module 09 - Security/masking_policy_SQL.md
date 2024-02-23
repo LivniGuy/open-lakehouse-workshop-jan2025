@@ -23,7 +23,7 @@ In this section you will create a Ranger policy to apply a Masking Policy for th
 
   - On the Policy details click on Disabled to Enable the policy
 
-![](../images/39.png)
+![39.png](../../images/39.png)
 
 - Click on Save button
 
@@ -37,5 +37,5 @@ In this section you will create a Ranger policy to apply a Masking Policy for th
 
 - In results you see that the Tailnum column is now been HASHed
 
-![](../images/41.png)
+![41.png](../../images/41.png)
 
