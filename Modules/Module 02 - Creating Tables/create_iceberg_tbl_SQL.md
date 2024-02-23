@@ -4,8 +4,7 @@
 
 - Execute the following lines in HUE for the Hive VW
 
-<!---->
-
+```
     drop table if exists ${user_id}_airlines.flights;
 
     CREATE EXTERNAL TABLE ${user_id}_airlines.flights (
@@ -23,30 +22,30 @@
     STORED AS PARQUET;
 
     SHOW CREATE TABLE ${user_id}_airlines.flights;
+```
 
 - In the output - look for the following (see highlighted fields)
 
-![](../images/50.png)
+![50.png](../../images/50.png)
 
 
-# Load Data into Iceberg Table<a id="load-data-into-iceberg-table"></a>
+# Load Data into Iceberg Table
 
 **Insert data feature**
 
 - Execute the following lines in HUE for the Hive VW (this may take a few minutes)
 
-<!---->
-
+```
     INSERT INTO ${user_id}_airlines.flights
      SELECT * FROM ${user_id}_airlines_csv.flights_csv
      WHERE year <= 2006;
+```
 
 - Once the load completes, execute the following query
 
-<!---->
-
+```
     SELECT year, count(*) 
     FROM ${user_id}_airlines.flights
     GROUP BY year
     ORDER BY year desc;
-
+```

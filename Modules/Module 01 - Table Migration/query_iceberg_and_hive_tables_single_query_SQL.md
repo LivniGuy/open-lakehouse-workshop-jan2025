@@ -19,7 +19,7 @@
     DESCRIBE FORMATTED ${user_id}_airlines.unique_tickets;
 ```
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/65.png)
+![65.png](../../images/65.png)
 
 - Now let’s run a query that combines this Hive Table with an Iceberg Table
 

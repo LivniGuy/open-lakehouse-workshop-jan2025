@@ -59,7 +59,7 @@ Select Spark 3.2.0
 
 Leave Advanced Options and Scheduling alone (default settings)
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/62.png)            ![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/63.png)
+![62.png](../../images/62.png)            ![63.png](../../images/63.png)
 
                                                                                                                  Upload File (Python)
 
@@ -78,4 +78,4 @@ Leave Advanced Options and Scheduling alone (default settings)
 
 - In the Results, you should see Year 2008 and a number of records along with the data for our previous years that have been loaded
 
-![](/Users/jingalls/Documents/GitHub/iceberg-demo-runbook/images/64.png)
+![64.png](../../images/64.png)
