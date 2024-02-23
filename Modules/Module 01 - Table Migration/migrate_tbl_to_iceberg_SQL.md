@@ -1,4 +1,4 @@
-# Migrate Existing Tables to Iceberg Tables<a id="migrate-existing-tables-to-iceberg-tables"></a>
+# Migrate Existing Tables to Iceberg Tables
 
 **Migrate table feature (in-place)**
 
@@ -8,11 +8,12 @@
     DESCRIBE FORMATTED ${user_id}_airlines.planes;
 ```
 
-![](../images/47.png)
+![47.png](../../images/47.png)
 
 - In the output - look for the following properties Table Type, and SerDe Library
 
-![](../images/48.png)
+![48.png](../../images/48.png)
+
 
 - Execute the following
 
@@ -33,7 +34,8 @@
 
   - Storage\_handler & SerDe Library - indicate what Serializer/Desearializer to use when reading/writing data in this case the “HiveIcebergSerDe”
 
-![](../images/49.png)
+![49.png](../../images/49.png)
+
 
 **Create Table as Select (CTAS) - create new table**
 

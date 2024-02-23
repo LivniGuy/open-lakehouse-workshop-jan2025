@@ -164,13 +164,18 @@ Perform necessary clean up of Iceberg tables.  The following steps will build o
 
 In no particular order:
 
-- ~~\[COMPLETED 2022-12-07] \[adding 2022-11-28] Join Iceberg Table(s) with Hive Table(s) - show that you don’t have to migrate “everything” at one time (also part of CDV)~~
 
 - Iceberg v2 Features (some added already to Runbook, a few are missing, but will be added over time)
+   acid merge in cml (done)
+   *add* acid merge in Hive
+   insert / update / delete - shown in DF CDC (done)
+   *add* insert / update / delete in Hive (not available for Impala)
 
-  - Unified Analytics support
 
   - Materialized View
+     Hive
+     Impala only from Unified Analytics
+
 
   - Upload in HUE directly to Iceberg Table Format
 
@@ -180,7 +185,6 @@ In no particular order:
 
   - From Kafka to Iceberg (leverage a Ready Flow in DFx)
 
-    - Flow using PutIceberg Processor
 
   - Weather data to be used to augment Delay data for ML Predictions
 
@@ -268,7 +272,7 @@ In no particular order:
     -- Ensure Snapshots have been removed
     SELECT * FROM ${user_id}_airlines_maint.flights.snapshots;
 
-- On-demand Compaction (PySpark Code) - run in CML
+- On-demand Compaction (PySpark Code) - run in CML or now CDE Session or scheduled Job
 
 <!---->
 
@@ -330,9 +334,6 @@ In no particular order:
 
     # Now let's investigate the "Bad" record we saw previously
 
-- ~~\[COMPLETED 2022-12-07]\[adding 2022-11-28] DataViz on top of Iceberg tables (already part of other demos)~~
-
-  - ~~Join Iceberg Table Format with table(s) in Hive Table Format~~
 
 - Incorporate Data Catalog instructions (feel free to show on your own)
 
