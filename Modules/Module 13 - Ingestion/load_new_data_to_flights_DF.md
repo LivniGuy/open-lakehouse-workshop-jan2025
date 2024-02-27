@@ -300,3 +300,262 @@ Double click on the Process Group.  This will be the resulting Flow (with a few
 
 - These Properties are Parameterized to allow any user to run the flow (as long as they have access to write to the Iceberg Table)
 
+
+
+# Appendix
+
+**Formatted (pretty print) AVRO Schema for incoming CSV Flights data:**
+
+```
+    {
+      "type": "record",
+      "namespace": "com.cloudera",
+      "name": "flights_new_data",
+      "fields": [
+        {
+          "name": "year",
+          "type": "int"
+        },
+        {
+          "name": "month",
+          "type": "int"
+        },
+        {
+          "name": "dayofmonth",
+          "type": "int"
+        },
+        {
+          "name": "dayofweek",
+          "type": "int"
+        },
+        {
+          "name": "uniquecarrier",
+          "type": "string"
+        },
+        {
+          "name": "tailnum",
+          "type": ["null","string"]
+        },
+        {
+          "name": "flightnum",
+          "type": ["null","int"]
+        },
+        {
+          "name": "origin",
+          "type": "string"
+        },
+        {
+          "name": "dest",
+          "type": "string"
+        },
+        {
+          "name": "crsdeptime",
+          "type": ["null","int"]
+        },
+        {
+          "name": "deptime",
+          "type": ["null","int"]
+        },
+        {
+          "name": "depdelay",
+          "type": ["null","double"]
+        },
+        {
+          "name": "taxiout",
+          "type": ["null","double"]
+        },
+        {
+          "name": "taxiin",
+          "type": ["null","double"]
+        },
+        {
+          "name": "crsarrtime",
+          "type": ["null","int"]
+        },
+        {
+          "name": "arrtime",
+          "type": ["null","int"]
+        },
+        {
+          "name": "arrdelay",
+          "type": ["null","double"]
+        },
+        {
+          "name": "cancelled",
+          "type": "double"
+        },
+        {
+          "name": "cancellationcode",
+          "type": ["null","string"]
+        },
+        {
+          "name": "diverted",
+          "type": "string"
+        },
+        {
+          "name": "crselapsedtime",
+          "type": ["null","double"]
+        },
+        {
+          "name": "actualelapsedtime",
+          "type": ["null","double"]
+        },
+        {
+          "name": "airtime",
+          "type": ["null","double"]
+        },
+        {
+          "name": "distance",
+          "type": ["null","double"]
+        },
+        {
+          "name": "carrierdelay",
+          "type": ["null","double"]
+        },
+        {
+          "name": "weatherdelay",
+          "type": ["null","double"]
+        },
+        {
+          "name": "nasdelay",
+          "type": ["null","double"]
+        },
+        {
+          "name": "securitydelay",
+          "type": ["null","double"]
+        },
+        {
+          "name": "lateaircraftdelay",
+          "type": ["null","double"]
+        }
+      ]
+    }
+```
+
+**Formatted (pretty print) AVRO Schema to match Iceberg table:**
+
+```
+    {
+      "type": "record",
+      "namespace": "com.cloudera",
+      "name": "flights_new_data",
+      "fields": [
+        {
+          "name": "month",
+          "type": "int"
+        },
+        {
+          "name": "dayofmonth",
+          "type": "int"
+        },
+        {
+          "name": "dayofweek",
+          "type": "int"
+        },
+        {
+          "name": "deptime",
+          "type": ["null","int"]
+        },
+        {
+          "name": "crsdeptime",
+          "type": ["null","int"]
+        },
+        {
+          "name": "arrtime",
+          "type": ["null","int"]
+        },
+        {
+          "name": "crsarrtime",
+          "type": ["null","int"]
+        },
+        {
+          "name": "uniquecarrier",
+          "type": "string"
+        },
+        {
+          "name": "flightnum",
+          "type": ["null","int"]
+        },
+        {
+          "name": "tailnum",
+          "type": ["null","string"]
+        },
+        {
+          "name": "actualelapsedtime",
+          "type": ["null","int"]
+        },
+        {
+          "name": "crselapsedtime",
+          "type": ["null","int"]
+        },
+        {
+          "name": "airtime",
+          "type": ["null","int"]
+        },
+        {
+          "name": "arrdelay",
+          "type": ["null","int"]
+        },
+        {
+          "name": "depdelay",
+          "type": ["null","int"]
+        },
+        {
+          "name": "origin",
+          "type": "string"
+        },
+        {
+          "name": "dest",
+          "type": "string"
+        },
+        {
+          "name": "distance",
+          "type": ["null","int"]
+        },
+        {
+          "name": "taxiin",
+          "type": ["null","int"]
+        },
+        {
+          "name": "taxiout",
+          "type": ["null","int"]
+        },
+        {
+          "name": "cancelled",
+          "type": "int"
+        },
+        {
+          "name": "cancellationcode",
+          "type": ["null","string"]
+        },
+        {
+          "name": "diverted",
+          "type": "string"
+        },
+        {
+          "name": "carrierdelay",
+          "type": ["null","int"]
+        },
+        {
+          "name": "weatherdelay",
+          "type": ["null","int"]
+        },
+        {
+          "name": "nasdelay",
+          "type": ["null","int"]
+        },
+        {
+          "name": "securitydelay",
+          "type": ["null","int"]
+        },
+        {
+          "name": "lateaircraftdelay",
+          "type": ["null","int"]
+        },
+        {
+          "name": "year",
+          "type": "int"
+        }
+      ]
+    }
+```
