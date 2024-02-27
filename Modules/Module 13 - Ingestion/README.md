@@ -4,17 +4,17 @@ This document will describe how to setup and run the Iceberg Processors in NiFi 
 
 Use Case: Airline specific, using a Data Lakehouse powered by Apache Iceberg.  The following schema will be used, for this document the 2 tables being used are: 1) **flights**, and 2) **airlines**.
 
-![](../../images/1.png)
+![](../../images/not_needed_1.png)
 
 Schema used for this Document
 
 The general flow for CDC processing for an Open Data Lakehouse powered by Apache Iceberg  is depicted below.  However, changes can be made depending on the source CDC system and technology requirements (the changes could be, for example: customer is already writing the GoldenGate CDC records to a file and to make a change to write them to Kafka would be cost prohibitive, then you could eliminate Kafka from the flow and pick up the CDC records directly from the file they are written to).  Also, please note that **_Iceberg may/may not be the best solution for fast changing data_** (million+ records being updated/deleted per second or minute) and in some cases it might make more sense to propose **_Kudu_** instead of Iceberg.
 
-![](../../images/2.png)
+![](../../images/typical_cdc_processing.png)
 
 However, for this document we will start directly with NiFi (Flow Designer) for the CDC data processing and skip the actual part that is doing the CDC capture _\[this may be added in a later version of this document]_.  Within NiFi we will generate the CDC data using JSON records to simulate acquiring CDC records and then applying the changes.
 
-![](../../images/3.png)
+![](../../images/cdc_flow_for_this_module.png)
 
 2. # Install/Setup (including Data Lakehouse - Iceberg)
 
@@ -79,7 +79,7 @@ However, for this document we will start directly with NiFi (Flow Designer) for 
 
     - HUE has determined that there are 2 parameters that need to be entered, in the “user\_id” box enter your user id; and in the “cdp\_env\_bucket” box enter the CDP Environment bucket name
 
-![](../../images/4.png)
+![](../../images/not_needed_4.png)
 
 ```
     -- CREATE DATABASES
@@ -205,7 +205,7 @@ However, for this document we will start directly with NiFi (Flow Designer) for 
 
   - Enable Public Load balancer: checked
 
-![](../../images/5.png)
+![](../../images/enable_cde_service.png)
 
 - Add a New Virtual Cluster, replace \<user-id> with your user id
 
@@ -219,6 +219,6 @@ However, for this document we will start directly with NiFi (Flow Designer) for 
 
   - Other settings can remain default
 
-![](../../images/6.png)
+![](../../images/create_cde_cluster.png)
 
 
