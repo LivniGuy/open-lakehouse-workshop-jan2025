@@ -1,4 +1,4 @@
-#  MODULE 02 - Creating Tables Overview
+#  MODULE 02 - Creating Tables
 
 ## Creating Iceberg Tables Using SQL, Spark SQL and Spark DataFrames
 
@@ -18,7 +18,7 @@ Spark DataFrames offer a programmatic way to create Iceberg tables within Spark 
 
 This module provides a foundation for creating Iceberg tables suited for your specific needs on CDP. By following along in this module, you'll gain a comprehensive understanding of creating and populating Iceberg tables on CDP.
 
-Note: Remember to replace `${user_id}` with your actual user ID throughout the process.
+Remember to replace `${user_id}` with your actual user ID throughout the process.
 
 To begin, select one of the sub-modules below:
 

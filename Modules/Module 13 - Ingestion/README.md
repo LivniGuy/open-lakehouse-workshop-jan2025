@@ -1,3 +1,54 @@
+# Module 13 - Ingestion
+
+## Ingestion with Iceberg and NiFi
+
+This module covers setting up and running Iceberg Processors in NiFi for data ingestion into an Iceberg Data Lakehouse on Cloudera Data Platform (CDP).
+
+**Focus on Iceberg Data Lakehouse and NiFi Processors**
+
+The guide concentrates on:
+
+- Using PutIceberg and PutIcebergCDC Processors for data ingestion.
+- Demonstrating these processors within the context of an Airline data lakehouse powered by Apache Iceberg.
+
+**Prerequisites (briefly mentioned):**
+
+- A CDP environment with S3 bucket access.
+- Basic understanding of Apache Iceberg and NiFi.
+
+**Data Source and Schema**
+
+The example uses airline data in CSV format, focusing on flights and airlines tables.
+
+**Iceberg Table Creation (HUE):**
+
+The guide provides SQL code to execute in HUE for creating the Iceberg tables (`airlines`, `planes`, `airports`, and `flights`) within a designated database (e.g., `${user_id}_airlines`). The `flights` table is created as a partitioned table.
+
+**NiFi Flow Development is Out of Scope**
+
+While this module mentions using NiFi for data ingestion, it does not cover the specifics of developing the NiFi flow itself. It highlights the usage of PutIceberg and PutIcebergCDC Processors but leaves the flow design for a separate document.
+
+**Key Takeaways:**
+
+- This module focuses on setting up the Iceberg Data Lakehouse and understanding the role of NiFi Processors for data ingestion.
+- Separate documentation likely exists for developing the NiFi flow itself.
+
+**Remember to replace `${user_id}` with your actual user ID throughout the process.**
+
+To begin, select one of the sub-modules below:
+
+## Submodules
+
+`01` [Load New Data](load_new_data_to_flights_DF.md)
+
+`02` [Change Data Capture with Debezium](change_data_capture_debezium_DF.md)
+
+`03` [Change Data Capture with GoldenGate](change_data_capture_goldengate_DF.md)
+
+`04` [Custom Change Data Capture ](change_data_capture_custom_DF.md)
+
+
+------- ***HOLDING ONTO THE FOLLOWING IN CASE WE NEED THIS LATER*** --------
 # Summary (to be EDITED) most of the following can be removed/reduced, but there is probably something here to save or reuse)
 
 This document will describe how to setup and run the Iceberg Processors in NiFi (DataFlow Data Service - Flow Designer/Catalog/etc., DataHub Flow Management - NiFi, or CDF - NiFi on-prem).  These instructions include: 1) setup of the Data Lakehouse; and 2) Instructions on using the PutIceberg & PutIcebergCDC Processors.  These instructions do not include full details on setup and installation of: the Cloud CDP Environment, the PvC Data Service installation, and/or the CDP Base Cluster.

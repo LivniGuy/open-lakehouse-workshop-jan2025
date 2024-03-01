@@ -1,6 +1,6 @@
-#  MODULE 01 - Table Migration Overview
+#  MODULE 01 - Table Migration
 
-## Migrating Tables to Iceberg and Querying Multiple Table Formats (Summary)
+## Migrating Tables to Iceberg and Querying Multiple Table Formats
 
 This module covers migrating tables to Iceberg format on the Cloudera Data Platform (CDP) and combining Iceberg and Hive tables in queries. Iceberg offers advantages like efficient data management and faster queries.
 
@@ -25,7 +25,7 @@ In summary, Iceberg allows you to:
 - Migrate tables to Iceberg over time, enabling a smooth transition.
 - Combine Iceberg and Hive tables within queries for comprehensive data analysis.
 
-Note: Remember to replace `${user_id}` with your actual user ID throughout the process.
+Remember to replace `${user_id}` with your actual user ID throughout the process.
 
 To begin, select one of the sub-modules below:
 
