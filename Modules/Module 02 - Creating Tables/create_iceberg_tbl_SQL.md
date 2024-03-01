@@ -29,23 +29,8 @@
 ![50.png](../../images/50.png)
 
 
-# Load Data into Iceberg Table
+Continue with 1 of the following
+- Module 03 - Loading Data > load_iceberg_tbl_SQL.md
+- Module 03 - Loading Data > ???
+- Module 13 - load_new_data_to_flights_DF.md
 
-**Insert data feature**
-
-- Execute the following lines in HUE for the Hive VW (this may take a few minutes)
-
-```
-    INSERT INTO ${user_id}_airlines.flights
-     SELECT * FROM ${user_id}_airlines_csv.flights_csv
-     WHERE year <= 2006;
-```
-
-- Once the load completes, execute the following query
-
-```
-    SELECT year, count(*) 
-    FROM ${user_id}_airlines.flights
-    GROUP BY year
-    ORDER BY year desc;
-```
