@@ -1,63 +1,78 @@
-# iceberg-demo-runbook README
+## Iceberg Demo Runbook - Gaining a Competitive Advantage with Open Data Lakehouse
 
-## Iceberg Demo Runbook
-### Iceberg - CDP’s Open Data Lakehouse
+This Iceberg Demo Runbook showcases the end-to-end capabilities of the Cloudera Data Platform (CDP) Open Data Lakehouse powered by Apache Iceberg. It guides you through a multi-functional data analytics process, covering:
 
-## Summary
+**Modules:**
 
-This is meant to showcase the end-to-end capabilities of the Cloudera Data Platform (CDP) Open Data Lakehouse powered by Apache Iceberg.  It includes multi-function analytics covering
-   * **Ingest** - batch/streaming
-   * **Enrich** - data engineering, transformations, data wrangling
-   * **Store the Data** - in a Data Lakehouse (Iceberg)
-   * **Predict** - machine learning, artificial intelligence
-
-**Value Propositions**
-
-Take advantage of Iceberg - CDP’s Open Data Lakehouse, to experience better performance, lower maintenance responsibilities, and greater control.
-
-**Scenario**
-
-Working for an "Aircraft Engine Manufacturer" company that wants to increase competitive advantage in two key ways:
-   * Engineer better, more fault tolerant aircraft engines
-   * Be proactive in predictive maintenance on engines, and faster discovery-to-fix in new engine designs
-
-This will be a three phase plan:
-  1. Phase one:  Understand how our current engines contribute to airline flight delays and fix for future engines
-  2. Phase two:  Implement an ongoing reporting service to support ongoing engineering efforts to continuously improve engines based on delay data
-  3. Phase three:  Move to real-time analysis to fix things before they break both in engines already sold, and in new engine designs.
+- [**Module 01 - Table Migration**](Modules//Module%2001%20-%20Table%20Migration//README.md): Learn how to migrate existing tables into the Iceberg format for better manageability.
+- [**Module 02 - Creating Tables**](Modules//Module%2002%20-%20Creating%20Tables//README.md): Understand the process of creating new Iceberg tables within your CDP environment.
+- [**Module 03 - Loading Data**](Modules//Module%2003%20-%20Loading%20Data///README.md): Explore techniques for loading data into your Iceberg tables, including both batch and streaming methods.
+- [**Module 04 - Partition Evolution**](Modules//Module%2004%20-%20Partition%20Evolution/README.md): Discover how Iceberg manages table partitions to optimize data organization and queries.
+- [**Module 05 - Loading Data Multi-function Analytics**](Modules//Module%2005%20-%20Loading%20Data%20Multi-function%20Analytics//README.md): Explore advanced data loading techniques to support various analytics use cases.
+- [**Module 06 - Time Travel**](Modules//Module%2006%20-%20Time%20Travel//README.md): Leverage Iceberg's capabilities to query historical data at specific points in time.
+- [**Module 07 - Schema Evolution**](Modules//Module%2007%20-%20Schema%20Evolution//README.md): Learn how to adapt your Iceberg table schema to accommodate changes in your data.
+- [**Module 08 - ACID Transactions**](Modules//Module%2008%20-%20ACID//README.md): Ensure data consistency and integrity through ACID transactions within your Iceberg tables.
+- [**Module 09 - Security**](Modules//Module%2009%20-%20Security//README.md): Implement robust security measures to govern access and control data within your Iceberg tables.
+- [**Module 10 - Data Catalog**](Modules//Module%2010%20-%20Data%20Catalog//README.md): Effectively manage and discover your Iceberg tables through the data catalog.
+- [**Module 11 - Visualizations**](Modules//Module%2011%20-%20Visualizations/README.md): Integrate your Iceberg tables with data visualization tools for interactive data exploration.
+- [**Module 12 - Materialized Views**](Modules//Module%2012%20-%20Materialized%20Views//README.md): Create materialized views to improve query performance for frequently used analytical operations.
+- [**Module 13 - Ingestion with Iceberg and NiFi**](Modules//Module%2013%20-%20Ingestion//README.md): Set up and use NiFi Processors to ingest data into your Iceberg Data Lakehouse.
+- [**Module 14 - Branching**](Modules//Module%2014%20-%20Branching//README.md): Create and manage branches of your Iceberg tables for development and testing purposes.
+- [**Module 15 - Tagging**](Modules//Module%2015%20-%20Tagging//README.md): Assign tags to your Iceberg tables for easier organization, classification, and data lineage tracking.
+- [**Module 16 - Table Maintenance**](Modules//Module%2016%20-%20Table%20Maintenance//README.md): Perform maintenance tasks on your Iceberg tables to optimize performance and storage efficiency.
 
 
-**Setup**
+**Value Proposition: Leverage Iceberg for Superior Data Management**
 
-To do this, let's build a data warehouse & data lakehouse to create reports that engineers can use to improve our engines.  The following people will get to work:
+By adopting Iceberg, CDP's Open Data Lakehouse solution empowers you with:
 
-   * **Warehouse Administrators:**  These folks need to set up, monitor and maintain the data warehouse infrastructure, ensure security and governance is met, and support the BI Analysts and end user communities.
+- **Enhanced Performance:** Experience faster query execution and improved data access.
+- **Reduced Maintenance:** Benefit from simplified table management and automated tasks.
+- **Greater Control:** Maintain ownership and governance of your data assets.
 
-   * **BI Analysts:**  These folks will wrangle the needed data, keep the data up to date, tweak the data for quality and consistency, develop robust and perfromant curated data sets and build rich visual reports.
+**Scenario: Optimizing Aircraft Engine Design and Maintenance**
 
-   * **End user community:**  the 1,000+ aircraft mechanical and electrical engineers that will use the insight to improve design and provide preventative maintenance guidance to existing engines.
+Imagine you work for an "Aircraft Engine Manufacturer" seeking a competitive edge in two crucial areas:
 
-To improve our engine quality, we need to know three things:
-   1. Which engines are related to the most airline delays, and why?  This will help us improve engine efficiency (get there on time), reliability (reduce mechanical failures) and dependability (remove factors like weather that may impact engine performance).
-   2. Which airlines are using our engines and why?  This will help us prioritize our efforts
-   3. Which engines are continuously causing more challenges in the field - and why?  This will give us real-time feedback that can lead to better customer service (proactive maintenance and modifications to reduce challenges) and better next-generation engines (just-in-time feedback to engineers to modify prototypes and production units before they are shipped to the next customers)
+- **Engineering More Fault-Tolerant Engines:** Design engines with superior reliability and performance.
+- **Proactive Predictive Maintenance:** Implement proactive maintenance strategies to identify and address potential issues before they escalate.
 
+This runbook outlines a three-phase plan to achieve these goals:
 
-**Introduction**
+- **Phase 1: Analyze Historical Data**
+    - Identify engine types contributing the most to airline delays.
+    - Gain insights to improve engine efficiency, reliability, and dependability.
+- **Phase 2: Implement Ongoing Reporting**
+    - Establish a continuous reporting system for engineers to track and analyze delay data.
+    - Support ongoing efforts to refine engine design based on real-world performance.
+- **Phase 3: Real-Time Analysis for Predictive Maintenance**
+    - Transition to real-time analysis to proactively address issues in deployed engines and prototype designs.
+    - Reduce downtime and enhance customer service through proactive maintenance.
 
-For this scenario, we will show how Cloudera Data Platform (CDP) is used to enable the "Aircraft Engine Manufacturer" to gain competitive advantage - and at the same time it highlights the performance and automation capabilities that help ensure performance is maintained while controlling costs.
+**Building a Data-Driven Culture: Roles and Responsibilities**
 
-The following instructions will take you through how to use the Cloudera Data Platform (CDP) to quickly explore raw data, create curated versions of the data for simple reporting and dashboarding, and then scale up usage of the curated data by exposing it to more users.
-   * 00(00_prereqs.md) - UNDERSTAND THE PRE-REQS
-   * 01(01_setup.md) - GET IT SET UP
-   * 02(02_data_lakehouse.md) - MAKING IT BETTER
-   * 03(03_enrich.md) - OPTIMIZING FOR PRODUCTION
-   * 04(04_ingest.md) - ADDING REAL TIME DATA
-   * 05(05_predict.md) -  PREDICTIVE
+To achieve these objectives, we'll establish a data warehouse and data lakehouse collaborative environment:
 
-**ER Diagram:**
+- **Warehouse Administrators:**
+    - Set up, monitor, and maintain the data warehouse infrastructure.
+    - Ensure data security, governance, and compliance.
+    - Support BI Analysts and end-user communities.
+- **BI Analysts:**
+    - Wrangle and curate data for quality and consistency.
+    - Develop robust and performant data sets for analysis.
+    - Build informative visual reports for decision-making.
+- **End-User Community:** (1,000+ Aircraft Engineers)
+    - Utilize data insights to improve engine design.
+    - Develop preventative maintenance strategies for existing engines.
 
-   * Fact table: flights (86M rows)
-   * Dimension tables: airlines (1.5k rows), airports (3.3k rows) and planes (5k rows)
+**Key Questions for Data-Driven Engine Improvement**
 
-![airline_logistics_ERD.png](images/airline_logistics_ERD.png)
+To optimize engine quality, we'll focus on three critical questions:
+
+1. **Engine Impact on Airline Delays:** Which engine types are most linked to airline delays? Analyze the root causes to improve engine efficiency, reliability, and weather resilience.
+2. **Airline Utilization of Engines:** Identify which airlines use your engines to prioritize development efforts based on market share.
+3. **Identifying Engines with Ongoing Issues:** Pinpoint engines consistently causing problems for proactive customer service and next-generation design modifications.
+
+**Getting Started with CDP and Iceberg**
+
+This runbook demonstrates how CDP empowers the "Aircraft Engine Manufacturer" to gain a competitive advantage through performance, automation, and cost control. Explore the following modules to embark on your data-driven journey:
