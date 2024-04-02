@@ -116,7 +116,6 @@
 -- CREATE DATABASES
 CREATE DATABASE ${user_id}_airlines_csv;
 CREATE DATABASE ${user_id}_airlines;
-CREATE DATABASE ${user_id}_airlines_maint;
 
 -- CREATE CSV TABLES
 drop table if exists ${user_id}_airlines_csv.flights_csv;
@@ -161,6 +160,7 @@ tailnum STRING, owner_type STRING, manufacturer STRING, issue_date STRING,
 model STRING, status STRING, aircraft_type STRING, engine_type STRING, year INT
 )
 STORED AS PARQUET
+TBLPROPERTIES ('external.table.purge'='true')
 ;
 
 INSERT INTO ${user_id}_airlines.planes
@@ -198,30 +198,13 @@ lateaircraftdelay int
 PARTITIONED BY (year int)
 STORED BY ICEBERG
 STORED AS PARQUET
+TBLPROPERTIES ('external.table.purge'='true')
 ;
 
 -- LOAD DATA INTO ICEBERG TABLE FORMAT STORED AS PARQUET
 INSERT INTO ${user_id}_airlines.flights_iceberg
 SELECT * FROM ${user_id}_airlines_csv.flights_csv
 WHERE year <= 2006;
-
--- [TABLE MAINTENANCE] CREATE FLIGHTS TABLE IN ICEBERG TABLE FORMAT STORED AS PARQUET
-drop table if exists ${user_id}_airlines_maint.flights;
-
-CREATE TABLE ${user_id}_airlines_maint.flights (
-month int, dayofmonth int,
-dayofweek int, deptime int, crsdeptime int, arrtime int,
-crsarrtime int, uniquecarrier string, flightnum int, tailnum string,
-actualelapsedtime int, crselapsedtime int, airtime int, arrdelay int,
-depdelay int, origin string, dest string, distance int, taxiin int,
-taxiout int, cancelled int, cancellationcode string, diverted string,
-carrierdelay int, weatherdelay int, nasdelay int, securitydelay int,
-lateaircraftdelay int
-)
-PARTITIONED BY (year int)
-STORED BY ICEBERG
-STORED AS PARQUET
-;
 ```
 
 - Execute the following in HUE using the Hive VW to test that data has loaded correctly
