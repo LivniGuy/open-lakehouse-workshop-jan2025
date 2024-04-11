@@ -1,14 +1,14 @@
 # Partition Evolution
 
-In this Demo, we’ll just be exploring Partition Evolution.
+In this Demo, we’ll just be exploring in-place Partition Evolution.
 
 **In-place Table Evolution feature**
 
 - Execute the following lines in HUE for the Hive VW 
 
 ```
-    ALTER TABLE ${user_id}_airlines.flights
-    SET PARTITION spec ( year, month );
+ALTER TABLE ${user_id}_airlines.flights
+SET PARTITION spec ( year, month );
 ```
 
 - **Note**: this ALTER TABLE happens in-place and no data is manipulated existing data remains indexed by Year
@@ -16,7 +16,7 @@ In this Demo, we’ll just be exploring Partition Evolution.
 * Execute the following
 
 ```
-    SHOW CREATE TABLE ${user_id}_airlines.flights;
+SHOW CREATE TABLE ${user_id}_airlines.flights;
 ```
 
 - In the output - look for the Partition Spec to see the table is now partitioned by Year & Month
@@ -26,9 +26,9 @@ In this Demo, we’ll just be exploring Partition Evolution.
 - Execute the following lines in HUE for the Hive VW to load additional data into the flights table to leverage the new partitioning strategy
 
 ```
-    INSERT INTO ${user_id}_airlines.flights
-     SELECT * FROM ${user_id}_airlines_csv.flights_csv
-     WHERE year = 2007;
+INSERT INTO ${user_id}_airlines.flights
+SELECT * FROM ${user_id}_airlines_csv.flights_csv
+WHERE year = 2007;
 ```
 
 **Impala Query Iceberg Tables - engine agnostic**
@@ -38,21 +38,21 @@ In this Demo, we’ll just be exploring Partition Evolution.
 - Execute the following in HUE for Impala VW, In the “user\_id” parameter box enter your user id
 
 ```
-    -- Typical analytic query patterns that need to be run
+-- Typical analytic query patterns that need to be run
 
-    -- RUN EXPLAIN PLAN ON THIS QUERY
-    SELECT year, month, count(*) 
-    FROM ${user_id}_airlines.flights
-    WHERE year = 2006 AND month = 12
-    GROUP BY year, month
-    ORDER BY year desc, month asc;
+-- RUN EXPLAIN PLAN ON THIS QUERY
+SELECT year, month, count(*) 
+FROM ${user_id}_airlines.flights
+WHERE year = 2006 AND month = 12
+GROUP BY year, month
+ORDER BY year desc, month asc;
 
-    -- RUN EXPLAIN PLAN ON THIS QUERY; AND COMPARE RESULTS
-    SELECT year, month, count(*) 
-    FROM ${user_id}_airlines.flights
-    WHERE year = 2007 AND month = 12
-    GROUP BY year, month
-    ORDER BY year desc, month asc;
+-- RUN EXPLAIN PLAN ON THIS QUERY; AND COMPARE RESULTS
+SELECT year, month, count(*) 
+FROM ${user_id}_airlines.flights
+WHERE year = 2007 AND month = 12
+GROUP BY year, month
+ORDER BY year desc, month asc;
 ```
 
 - Highlight the first “SELECT” statement to the “;” and click on the![](../images/52.png)and select EXPLAIN.  Scroll down to the bottom of the Explain tab

@@ -1,4 +1,4 @@
-# SQL Merge ACID feature - shown in CML
+# SQL ACID Merge feature - shown in CML
 
 In this section use CML to run though some of the Iceberg features using Spark again, by running some PySpark code.  Here we will primarily concentrate on taking advantage of the ACID capabilities of Iceberg.  Since we are using CML, this section also shows off the multi-function analytic feature of Iceberg.
 

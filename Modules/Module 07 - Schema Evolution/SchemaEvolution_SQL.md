@@ -1,44 +1,39 @@
-# 01_prereqs
+# Schema Evolution
 
-## Iceberg Demo Runbook
+In this Demo, we'll be exploring in-place schema evolution.
 
-## STEP 1: Getting Airline Data to Cloud Storage
+**In-place Schema Evolution feature - Add columns to table**
 
-Download files from this GitHub [link to GitHub]()
-Click on the drop down next to folder, and select Download
+* Execute the folling in HUE for the Hive VW
+```
+ALTER TABLE ${prefix}_airlines.airlines ADD COLUMNS(status STRING, updated TIMESTAMP);
+```
 
-Unzip the downloaded zip files in the `flights` directory.	
+   ![In Place Table Evolution](../../images/SchemaEvolution_Add_Columns.png)
 
-In the AWS Console for s3 
-Navigate to the bucket used for creating the environment
+   - The existing table data is **not modified** with this statement
 
-Create a folder named - `iceberg-demo`
-   * This new folder location should be something like `s3a://<cdp-bucket>/iceberg-demo`
-   * `In AWS S3, Upload` With the folder you just created selected, click on Upload, on the Upload screen click `Add folder` button and browse your computer to the  airlines-csv directory (download from GitHub)
+* Refresh the table browser to see new columns added
 
-Browse each of the folder to make sure the CSV file is in the folders correctly - flights, planes, airlines, and airports
+   - Click on the refresh button to the right of `Tables`
 
-## STEP 2: Create CDW Virtual Warehouses
+   - Click `airlines` table to see the new columns: `status` and `updated`
+   
+   ![Updated Table Metadata](../../images/SchemaEvolution_Updated_Metadata.png)
 
-   * In CDW ensure that the Environment you are using is enabled for use with CDW
+* Add data into the new schema for `airlines` table
 
-   * For this Runbook you can use the Default Database Catalog that is automatically created with enabling CDW for the Environment
+```
+INSERT INTO ${prefix}_airlines.airlines
+VALUES("Z999","Adrenaline Airways","NEW",now());
+```
 
-   * Create two CDW Virtual Warehouses attached to the Default Database Catalog, replace &lt;prefix> with your user id
+* Query `airlines` table to see old and new schema data
 
-      1. Create a Hive VW
-         Name: `<prefix>-iceberg-hive-vw`
-         Type: Hive
-         Database Catalog: select the Default DBC for the Environment you are using
-         Size: x-small
-         Concurrency Autoscaling > Executors: make sure the max is > (# Attendees * 2) Leave remaining options as default (these wcan be changed but for this Runbook there are no specific settings that are required)
-   2. Create an Impala VW
-      * Name: `<user-id>-iceberg-impala-vw`
-      * Type: Impala
-      * Database Catalog: select the Default DBC for the Environment you are using
-      * Size: x-small
-      * Unified Analytics: enabled
-      * Executors: make sure the max is > (# Attendees * 2)
-      * Leave remaining options as default (these can be changed but for this Runbook there are no specific settings that are required)
+```
+SELECT * FROM airlines WHERE code > "Z";
+```
 
+   - As you scroll through the results you will see the 2 columns that we added will contain "NULL" values for the data that was already in the table and the new record we inserted will have value in the new columns `status` and `updated`
 
+   ![View data after Schema Evolution](../../images/SchemaEvolution_View_Results.png)
