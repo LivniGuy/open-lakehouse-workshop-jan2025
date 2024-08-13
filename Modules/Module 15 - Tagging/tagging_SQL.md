@@ -1,6 +1,6 @@
 # Tagging
 
-In this section we will work with Tags to retain a Snapshot for 365 days.
+In this section we will work with Tags to retain a Snapshot for 365 days.  Iceberg tagging is available in Hive only. Iceberg tagging is not available in Impala or Spark.
 
 Tags are named references to snapshots with their own independent lifecycle.  You can use a <b>Tag</b> to set retention policies on specific Snapshots.  Other use cases inclue GDPR requirements and retaining important historical snapshots for auditing.
 
