@@ -45,7 +45,6 @@ CREATE EXTERNAL TABLE ${user_id}_airlines.planes (
   tailnum STRING, owner_type STRING, manufacturer STRING, issue_date STRING,
   model STRING, status STRING, aircraft_type STRING,  engine_type STRING, year INT 
 ) 
-STORED AS PARQUET
 TBLPROPERTIES ('external.table.purge'='true')
 ;
 
@@ -72,7 +71,7 @@ INSERT INTO ${user_id}_airlines.unique_tickets
 -- CREATE ICEBERG TABLE FORMAT STORED AS PARQUET
 drop table if exists ${user_id}_airlines.flights_iceberg;
 
-CREATE EXTERNAL TABLE ${user_id}_airlines.flights_iceberg (
+CREATE TABLE ${user_id}_airlines.flights_iceberg (
  month int, dayofmonth int, 
  dayofweek int, deptime int, crsdeptime int, arrtime int, 
  crsarrtime int, uniquecarrier string, flightnum int, tailnum string, 
@@ -83,15 +82,14 @@ CREATE EXTERNAL TABLE ${user_id}_airlines.flights_iceberg (
  lateaircraftdelay int
 ) 
 PARTITIONED BY (year int)
-STORED BY ICEBERG 
-STORED AS PARQUET
-TBLPROPERTIES ('format-version'='2','external.table.purge'='true')
+STORED AS ICEBERG 
+TBLPROPERTIES ('format-version'='2')
 ;
 
 -- LOAD DATA INTO ICEBERG TABLE FORMAT STORED AS PARQUET
 INSERT INTO ${user_id}_airlines.flights_iceberg
  SELECT * FROM ${user_id}_airlines_csv.flights_csv
- WHERE year <= 2006;
+ WHERE year IN (2005, 2006);
 
 
 -- [TABLE MAINTENANCE] CREATE FLIGHTS TABLE IN ICEBERG TABLE FORMAT STORED AS PARQUET
@@ -108,7 +106,6 @@ CREATE TABLE ${user_id}_airlines_maint.flights (
  lateaircraftdelay int
 ) 
 PARTITIONED BY (year int)
-STORED BY ICEBERG 
-STORED AS PARQUET
-TBLPROPERTIES ('format-version'='2','external.table.purge'='true')
+STORED AS ICEBERG 
+TBLPROPERTIES ('format-version'='2')
 ;

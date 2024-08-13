@@ -2,10 +2,10 @@
 
 **Migrate table feature (in-place)**
 
-- Execute the following in HUE for Hive VW, In the “user\_id” parameter box enter your user id 
+- Execute the following in HUE for Hive VW or Impala VW, In the “user\_id” parameter box enter your user id 
 
 ```
-    DESCRIBE FORMATTED ${user_id}_airlines.planes;
+DESCRIBE FORMATTED ${user_id}_airlines.planes;
 ```
 
 ![47.png](../../images/47.png)
@@ -18,10 +18,13 @@
 - Execute the following
 
 ```
-    ALTER TABLE ${user_id}_airlines.planes
-    SET TBLPROPERTIES ('storage_handler'='org.apache.iceberg.mr.hive.HiveIcebergStorageHandler');
+ALTER TABLE ${user_id}_airlines.planes
+   CONVERT ICEBERG;
 
-    DESCRIBE FORMATTED ${user_id}_airlines.planes;
+-- For Impala only; to use Iceberg version 2 table format, uncomment & run the following
+-- ALTER TABLE ${user_id}_airlines.planes SET TBLPROPERTIES('format-version'='2');
+
+DESCRIBE FORMATTED ${user_id}_airlines.planes;
 ```
 
 - In the output - look for the following (see image with highlighted fields) key values: Table Type, Location (location of where table data is stored), SerDe Library, and in Table Parameters look for properties MIGRATE\_TO\_ICEBERG, storage\_handler, metadata\_location, and table\_type
@@ -42,13 +45,13 @@
 - Execute the following lines in HUE for the Hive VW
 
 ```
-    drop table if exists ${user_id}_airlines.airports;
+drop table if exists ${user_id}_airlines.airports;
 
-    CREATE EXTERNAL TABLE ${user_id}_airlines.airports
-    STORED BY ICEBERG AS
-      SELECT * FROM ${user_id}_airlines_csv.airports_csv;
+CREATE EXTERNAL TABLE ${user_id}_airlines.airports
+   STORED BY ICEBERG AS
+   SELECT * FROM ${user_id}_airlines_csv.airports_csv;
 
-    DESCRIBE FORMATTED ${user_id}_airlines.airports;
+DESCRIBE FORMATTED ${user_id}_airlines.airports;
 ```
 
 - In the output - look for table\_type in the Table Parameters section to ensure that the table is in “ICEBERG” format
