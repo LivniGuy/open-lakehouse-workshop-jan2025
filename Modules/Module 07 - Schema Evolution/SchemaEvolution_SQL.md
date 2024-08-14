@@ -31,7 +31,7 @@ VALUES("Z999","Adrenaline Airways","NEW",now());
 * Query `airlines` table to see old and new schema data
 
 ```
-SELECT * FROM airlines WHERE code > "Z";
+SELECT * FROM ${prefix}_airlines.airlines WHERE code > "Z";
 ```
 
    - As you scroll through the results you will see the 2 columns that we added will contain "NULL" values for the data that was already in the table and the new record we inserted will have value in the new columns `status` and `updated`

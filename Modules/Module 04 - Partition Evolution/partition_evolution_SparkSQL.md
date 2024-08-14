@@ -12,7 +12,7 @@ user_id = "<user_id>"
 csv_database_name = user_id + "_airlines_csv"
 odl_database_name = user_id + "_airlines"
 
-# CHECK TABLE FORMAT - before partition evolution (will return 'year')
+# CHECK TABLE FORMAT - before in-place partition evolution (will return 'year')
 spark_df = spark.sql(f"DESCRIBE FORMATTED {odl_database_name}.flights")
 spark_df.filter(spark_df.col_name.isin(['Part 0', 'Part 1', 'Part 2'])).show()
 
@@ -20,7 +20,7 @@ spark_df.filter(spark_df.col_name.isin(['Part 0', 'Part 1', 'Part 2'])).show()
 spark.sql(f"ALTER TABLE {odl_database_name}.flights ADD PARTITION FIELD month").show()
 
 
-# CHECK TABLE FORMAT - before partition evolution (will return 'year', 'month')
+# CHECK TABLE FORMAT - after partition evolution (will return 'year', 'month')
 spark_df = spark.sql(f"DESCRIBE FORMATTED {odl_database_name}.flights")
 spark_df.filter(spark_df.col_name.isin(['Part 0', 'Part 1', 'Part 2'])).show()
 
