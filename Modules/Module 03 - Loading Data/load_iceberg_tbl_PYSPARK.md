@@ -7,8 +7,14 @@
    - How Iceberg can be written to from multiple services, if they write concurrently Iceberg has Consistency guarantees and has an innovative way it handles these situations
 
 ```
-spark.sql("INSERT INTO jing_airlines.flights SELECT * FROM jing_airlines_csv.flights_csv WHERE year = 2008").show()
+# Variables - replace <user_id> with your user id
+user_id = "<user_id>"
+csv_database_name = user_id + "_airlines_csv"
+odl_database_name = user_id + "_airlines"
 
-spark.sql("SELECT year, count(*) FROM jing_airlines.flights GROUP BY year ORDER BY year desc").show()
+spark.sql(f"INSERT INTO {odl_database_name}.flights SELECT * FROM {csv_database_name}.flights_csv WHERE year IN (2005, 2006)").show()
+
+spark.sql(f"SELECT year, count(*) FROM {odl_database_name}.flights GROUP BY year ORDER BY year desc").show()
+
 ```
 

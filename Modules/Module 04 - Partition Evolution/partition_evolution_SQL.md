@@ -35,7 +35,7 @@ WHERE year = 2007;
 
 - First of all let’s switch to take advantage of the performance capabilities of Impala to query data for this part of the Runbook.
 
-- Execute the following in HUE for Impala VW, In the “user\_id” parameter box enter your user id
+- "Run Explain Plan" for the following in HUE for Impala VW, In the “user\_id” parameter box enter your user id
 
 ```
 -- Typical analytic query patterns that need to be run
