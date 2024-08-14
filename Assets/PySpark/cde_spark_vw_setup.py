@@ -101,8 +101,6 @@ partitioned_by = f"PARTITIONED BY ({flights_part_cols})"
 
 spark.sql(f"drop table if exists {odl_database_name}.flights_iceberg").show()
 
-# loc = f"LOCATION '{cdp_env_bucket}/warehouse/tablespace/external/hive/{odl_database_name}.db/flights_iceberg'"
-
 flights_cols = flights_cols_1 + flights_cols_2 + flights_cols_3 + flights_cols_4
 spark.sql(f"CREATE TABLE {odl_database_name}.flights_iceberg ({flights_cols}) USING ICEBERG {partitioned_by} {tblprop}").show()
 
@@ -114,8 +112,6 @@ tblprop = "TBLPROPERTIES('format-version'='2')"
 partitioned_by = f"PARTITIONED BY ({flights_part_cols})"
 
 spark.sql(f"drop table if exists {maint_database_name}.flights").show()
-
-# loc = f"LOCATION '{cdp_env_bucket}/warehouse/tablespace/external/hive/{maint_database_name}.db/flights'"
 
 flights_cols = flights_cols_1 + flights_cols_2 + flights_cols_3 + flights_cols_4
 spark.sql(f"CREATE TABLE {maint_database_name}.flights ({flights_cols}) USING ICEBERG {partitioned_by} {tblprop}").show()
