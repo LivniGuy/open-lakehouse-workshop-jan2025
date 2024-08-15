@@ -18,27 +18,24 @@ odl_database_name = user_id + "_airlines"
 spark_df = spark.sql(f"DESCRIBE FORMATTED {odl_database_name}.flights")
 spark_df.filter(spark_df.col_name.isin(['Part 0', 'Part 1', 'Part 2'])).show()
 
+# EVOLVE PARTITOIN IN-PLACE & WRITE DATA USING NEW PARTITION (single DF statement) - add another column to partition to improve performance
+spark.sql(f"ALTER TABLE {odl_database_name}.flights ADD PARTITION FIELD month").show()
 
 
-Table sampleTable = ...;
-sampleTable.updateSpec()
-    .addField(bucket("id", 8))
-    .removeField("category")
-    .commit();
+# CHECK TABLE FORMAT - after partition evolution (will return 'year', 'month')
+spark_df = spark.sql(f"DESCRIBE FORMATTED {odl_database_name}.flights")
+spark_df.filter(spark_df.col_name.isin(['Part 0', 'Part 1', 'Part 2'])).show()
 
 
 # READ 2007 DATA
 spark_df = spark.read.table(f"{csv_database_name}.flights_csv").where(col("year").isin([2007]))
 
-# EVOLVE PARTITOIN IN-PLACE & WRITE DATA USING NEW PARTITION (single DF statement) - add another column to partition to improve performance
-spark.table(f"{odl_database_name}.flights").updateSpec().addField("month").append()
+# WRITE 2007 DATA TO TABLE
+spark_df.writeTo(f"{odl_database_name}.flights").using("iceberg").append()
+
 
 # CHECK RESULTS
 spark.read.table(f"{odl_database_name}.flights").groupBy(col("year")).count().orderBy(col("year"), ascending=False).show()
-
-# CHECK TABLE FORMAT - after partition evolution (will return 'year', 'month')
-spark_df = spark.sql(f"DESCRIBE FORMATTED {odl_database_name}.flights")
-spark_df.filter(spark_df.col_name.isin(['Part 0', 'Part 1', 'Part 2'])).show()
 
 ```
 
