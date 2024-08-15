@@ -7,7 +7,6 @@
 ```
 # VARIABLES - change "<user_id>"
 user_id = "<user_id>"
-csv_database_name = user_id + "_airlines_csv"
 odl_database_name = user_id + "_airlines"
 
 flights_cols_1 = "month int, dayofmonth int, dayofweek int, deptime int, crsdeptime int, arrtime int, crsarrtime int, "
@@ -31,6 +30,9 @@ spark.sql(f"SHOW CREATE TABLE {odl_database_name}.flights").show()
 
 # CHECK PARTITION - list of columns (returns 'year')
 spark_df = spark.sql(f"DESCRIBE FORMATTED {odl_database_name}.flights")
+# ---- show all metadata
+spark_df.show(100, truncate=False)
+# ---- show partition details only
 spark_df.filter(spark_df.col_name.isin(['Part 0', 'Part 1', 'Part 2'])).show()
 
 # CHECK TABLE FORMAT (returns 'iceberg')
