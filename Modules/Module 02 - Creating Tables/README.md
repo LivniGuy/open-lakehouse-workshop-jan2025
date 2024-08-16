@@ -41,6 +41,8 @@ By mastering these methods, you'll be equipped to create Iceberg tables tailored
 
 Choose one of the following submodules to get started:
 
-- `01` [Create Iceberg Tables Using SQL](create_iceberg_tbl_SQL.md)
-- `02` [Create Iceberg Tables Using Spark SQL](create_iceberg_tbl_SparkSQL.md)
-- `03` [Create Iceberg Tables Using Spark DataFrames](create_iceberg_tbl_SparkDataFrame.md)
+`01` [Create Iceberg Tables Using SQL](create_iceberg_tbl_SQL.md)
+
+`02` [Create Iceberg Tables Using Spark SQL](create_iceberg_tbl_SparkSQL.md)
+
+`03` [Create Iceberg Tables Using Spark DataFrames](create_iceberg_tbl_SparkDataFrame.md)

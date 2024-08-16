@@ -51,7 +51,10 @@ By the end of this module, you'll understand how to:
 
 ### Submodules
 
-- `01` [Migrate Tables to Iceberg Using SQL](migrate_tbl_to_iceberg_SQL.md)
-- `02` [Migrate Tables to Iceberg Using Spark SQL](migrate_tbl_to_iceberg_SparkSQL.md)
-- `03` [Migrate Tables to Iceberg Using Spark DataFrames](migrate_tbl_to_iceberg_SparkDataFrame.md)
-- `04` [Query Iceberg and Hive Tables](query_iceberg_and_hive_tables_single_query_SQL.md)
+`01` [Migrate Tables to Iceberg Using SQL](migrate_tbl_to_iceberg_SQL.md)
+
+`02` [Migrate Tables to Iceberg Using Spark SQL](migrate_tbl_to_iceberg_SparkSQL.md)
+
+`03` [Migrate Tables to Iceberg Using Spark DataFrames](migrate_tbl_to_iceberg_SparkDataFrame.md)
+
+`04` [Query Iceberg and Hive Tables](query_iceberg_and_hive_tables_single_query_SQL.md)
