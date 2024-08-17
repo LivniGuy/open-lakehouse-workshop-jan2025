@@ -1,6 +1,8 @@
-## Iceberg Demo Runbook - Gaining a Competitive Advantage with Open Data Lakehouse
+## Open Data Lakehouse Runbook
 
-This Iceberg Demo Runbook showcases the end-to-end capabilities of the Cloudera Data Platform (CDP) Open Data Lakehouse powered by Apache Iceberg. It guides you through a multi-functional data analytics process, covering:
+### Gaining a Competitive Advantage with Apache Iceberg
+
+This Open Data Lakehouse Runbook showcases the end-to-end capabilities of the Cloudera Data Platform (CDP) Open Data Lakehouse powered by Apache Iceberg. It guides you through a multi-functional data analytics process, covering:
 
 ### **Modules:**
 
@@ -21,7 +23,7 @@ This Iceberg Demo Runbook showcases the end-to-end capabilities of the Cloudera 
 - [**Module 15 - Tagging**](Modules/Module%2015%20-%20Tagging/README.md): Assign tags to your Iceberg tables for easier organization, classification, and data lineage tracking.
 - [**Module 16 - Table Maintenance**](Modules/Module%2016%20-%20Table%20Maintenance/README.md): Perform maintenance tasks on your Iceberg tables to optimize performance and storage efficiency.
 
-### **Value Proposition: Leverage Iceberg for Superior Data Management**
+### **Leverage Iceberg for Superior Data Management**
 
 By adopting Iceberg, CDP's Open Data Lakehouse solution empowers you with:
 
