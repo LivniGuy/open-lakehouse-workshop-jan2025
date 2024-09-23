@@ -1,40 +1,58 @@
-# Query Iceberg Table Format and Hive Table Format in same query (in CDW HUE)
+# Query Iceberg Table Format and Hive Table Format in the Same Query (in CDW HUE)
 
-- Execute the following in HUE for Impala VW
+## Overview
 
-  - Remember that we have already seen the following tables in Iceberg Table format
+This submodule demonstrates how to query both Iceberg and Hive table formats together within the same query using Cloudera Data Warehouse (CDW) HUE. This approach allows you to combine the strengths of both table formats and migrate to Iceberg over time without disrupting existing workflows.
 
-    - flights (via Create Table in Iceberg format)
+## Prerequisites
 
-    - planes (migrated via Alter Table utility)
+Before starting, ensure you have:
 
-    - airports (CTAS to Iceberg table)
+- Access to Cloudera Data Warehouse (CDW) HUE.
+- Proper permissions to execute SQL queries in Impala Virtual Warehouse (VW).
+- Your `${prefix}` (e.g., your User ID) ready for use in the queries.
 
-  - So, let’s see about the Unique Tickets table.  We’ll see that this table is still in Hive Table Format - see SerDe Library = ParquetHiveSerDe (not the Iceberg SerDe).  So we have a Dashboard that is combining both table formats in a single Dashboard
+## Querying Combined Table Formats
 
-```
-    --
-    -- [optional] SINGLE QUERY USING ICEBERG & HIVE TABLE FORMAT
-    DESCRIBE FORMATTED ${user_id}_airlines.flights;
-    DESCRIBE FORMATTED ${user_id}_airlines.unique_tickets;
-```
+### Step 1: Describe Existing Tables
+
+First, describe the tables to confirm their formats. We already have the following tables in Iceberg format:
+
+- **flights**: Created directly in Iceberg format.
+- **planes**: Migrated to Iceberg format using the `ALTER TABLE` utility.
+- **airports**: Created as a new Iceberg table using CTAS.
+
+Now, let’s examine the `unique_tickets` table, which remains in Hive format (indicated by the `ParquetHiveSerDe` library).
+
+  ``` sql
+  -- [optional] SINGLE QUERY USING ICEBERG & HIVE TABLE FORMAT
+  DESCRIBE FORMATTED ${prefix}_airlines.flights;
+  DESCRIBE FORMATTED ${prefix}_airlines.unique_tickets;
+  ```
 
 ![65.png](../../images/65.png)
 
-- Now let’s run a query that combines this Hive Table with an Iceberg Table
+### Step 2: Query Combining Hive and Iceberg Tables
 
-```
-    -- Query combining Hive Table Format (unique_tickets) and Iceberg Table Format (flights)
-    SELECT 
+Execute the following query to combine data from the Hive table (`unique_tickets`) and the Iceberg table (`flights`):
+
+  ``` sql
+  -- Query combining Hive Table Format (unique_tickets) and Iceberg Table Format (flights)
+  SELECT 
     t.leg1origin,
     f.dest,
     count(*) as num_passengers
-    FROM ${user_id}_airlines.unique_tickets t
-    LEFT OUTER JOIN ${user_id}_airlines.flights f ON
-      t.leg1origin = f.origin
-      AND t.leg1dest = f.dest
-    GROUP BY t.leg1origin, f.dest;
-```
+  FROM ${prefix}_airlines.unique_tickets t
+  LEFT OUTER JOIN ${prefix}_airlines.flights f ON
+    t.leg1origin = f.origin
+    AND t.leg1dest = f.dest
+  GROUP BY t.leg1origin, f.dest;
+  ```
 
-- **VALUE**: combine Iceberg with Hive table formats, means you can convert to use Iceberg where it makes sense and also can migrate over time vs. having to migrate at the same time
+### Value
 
+Combining Iceberg with Hive table formats allows you to gradually convert and migrate your data to Iceberg where it makes sense, without needing to migrate all tables at once. This flexibility supports a smoother transition to Iceberg over time, optimizing performance and manageability.
+
+## Conclusion
+
+In this submodule, you’ve learned how to query both Iceberg and Hive table formats together. This capability provides flexibility in data management and allows for a phased migration to Iceberg, ensuring minimal disruption to ongoing operations.
