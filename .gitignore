@@ -3,3 +3,5 @@
 .vscode/*
 .vscode/**
 images/.DS_Store
+site/
+venv
