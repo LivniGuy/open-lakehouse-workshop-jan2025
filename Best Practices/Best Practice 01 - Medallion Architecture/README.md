@@ -4,7 +4,7 @@
 
 ## Overview
 
-This architecture consists of three distinct layers – bronze (raw), silver (validated), and gold (enriched) – each representing progressively higher levels of quality. Medallion architectures are sometimes referred to as "multi-hop" architectures.
+This architecture consists of three distinct layers – bronze (raw), silver (validated), and gold (enriched) – each representing progressively higher levels of quality. 
 
 ## Medallion Architecture at Cloudera
 
