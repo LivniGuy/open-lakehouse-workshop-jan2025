@@ -40,8 +40,8 @@ Using the transforms to allocate data rows to different partitions will make dat
 
 | Transformation | Spec | Supported by SQL Engine |
 | --------------- | ---- | ----------------------- |
-| Partition by year | years(time_stamp) | year(time_stamp) | Hive and Impala |
-| Partition by month | months(time_stamp) | month(time_stamp) | Hive and Impala |
+| Partition by year | years(time_stamp) or year(time_stamp) | Hive and Impala |
+| Partition by month | months(time_stamp) or month(time_stamp) | Hive and Impala |
 | Partition by a date value stored as int (dateint) | days(time_stamp) | date(time_stamp) | Hive |
 | Partition by hours | hours(time_stamp) | Hive |
 | Partition by a dateint in hours | hours(time_stamp) | Hive |
