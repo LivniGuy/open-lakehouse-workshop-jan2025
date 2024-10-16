@@ -29,7 +29,7 @@ Once the Spark job finishes successfully, you can use a query in CDW/Hue (Impala
 
 This module showcases how Spark can be a valuable tool for working with Iceberg tables on CDP, enabling data manipulation tasks beyond the capabilities of the Iceberg query engine itself.
 
-Remember to replace `${user_id}` with your actual user ID throughout the process.
+Remember to replace `${prefix}` with your actual user ID throughout the process.
 
 To begin, select the sub-module below:
 

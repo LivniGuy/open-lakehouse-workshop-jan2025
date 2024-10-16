@@ -29,7 +29,7 @@ This method involves using Spark DataFrames to evolve schemas within an Iceberg 
 
 ### Key Takeaways
 
-- Iceber tables suport in-place schema evolution, allowing you to optimize evolving business needs and requirements.
+- Iceberg tables suport in-place schema evolution, allowing you to optimize evolving business needs and requirements.
 - Adding/removing columns from a schema.
 - You can still query the old data as well as the new data without any code changes.
 
@@ -37,12 +37,11 @@ This method involves using Spark DataFrames to evolve schemas within an Iceberg 
 
 ### Submodules
 
-`01` [Migrate Tables to Iceberg Using SQL](migrate_tbl_to_iceberg_SQL.md)
+`01` [Evolve Iceberg Table Schema Using SQL](SchemaEvolution_SQL.md)
 
-`02` [Migrate Tables to Iceberg Using Spark SQL](migrate_tbl_to_iceberg_SparkSQL.md)
+`02` [Evolve Iceberg Table Schema Using Spark SQL](SchemaEvolution_SparkSQL.md)
 
-`03` [Migrate Tables to Iceberg Using Spark DataFrames](migrate_tbl_to_iceberg_SparkDataFrame.md)
+`03` [Evolve Iceberg Table Schema Using Spark DataFrames](SchemaEvolution_SparkDF.md)
 
-`04` [Query Iceberg and Hive Tables](query_iceberg_and_hive_tables_single_query_SQL.md)
 
 

@@ -14,7 +14,7 @@ The guide instructs you to execute a query in CDW/Hue (Impala) to view the `plan
 
 **Enabling Ranger Policy and Masking:**
 
-The steps involve navigating to the Ranger UI and enabling a predefined Ranger policy (`${user_id}`\-iceberg-fgac) for the `Hadoop SQL` service. This policy is designed to mask the Tailnum column.
+The steps involve navigating to the Ranger UI and enabling a predefined Ranger policy (`${prefix}`\-iceberg-fgac) for the `Hadoop SQL` service. This policy is designed to mask the Tailnum column.
 
 **Verifying Masked Data:**
 
@@ -22,7 +22,7 @@ After enabling the Ranger policy, running the same query on the `planes` table a
 
 **Note:** Refer to the specific steps and screenshots in the full documentation for detailed Ranger UI navigation.
 
-Remember to replace `${user_id}` with your actual user ID throughout the process.
+Remember to replace `${prefix}` with your actual user ID throughout the process.
 
 To begin, select the sub-module below:
 

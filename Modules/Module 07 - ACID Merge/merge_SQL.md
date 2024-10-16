@@ -8,9 +8,9 @@ Here we will be taking advantage of the ACID capabilities of Iceberg using the *
 
 ```
 -- Create Iceberg Table
-DROP TABLE IF EXISTS ${user_id}_airlines.airlines;
+DROP TABLE IF EXISTS ${prefix}_airlines.airlines;
 
-CREATE EXTERNAL TABLE ${user_id}_airlines.airlines (
+CREATE EXTERNAL TABLE ${prefix}_airlines.airlines (
 code string, description string
 )
 STORED BY ICEBERG
@@ -18,13 +18,13 @@ TBLPROPERTIES ('format-version' = '2', 'external.table.purge'='true')
 ;
 
 -- Load Data into Iceberg Table
-INSERT INTO ${user_id}_airlines.airlines 
-SELECT * FROM ${user_id}_airlines_csv.airlines_csv;
+INSERT INTO ${prefix}_airlines.airlines 
+SELECT * FROM ${prefix}_airlines_csv.airlines_csv;
 
 
 -- Review Results to ensure record was updated
 SELECT *
-FROM ${user_id}_airlines.airlines
+FROM ${prefix}_airlines.airlines
 WHERE code IN ('UA','04Q','05Q','Z999');
 ```
    - You should see the following results
@@ -38,11 +38,11 @@ WHERE code IN ('UA','04Q','05Q','Z999');
    -- Delete row with code '04Q'
    -- Insert new row for Z999 Adrenaline Airways (it really inserts all new records found in the source table)
 
-MERGE INTO ${user_id}_airlines.airlines AS t
+MERGE INTO ${prefix}_airlines.airlines AS t
   USING (
-  SELECT * FROM ${user_id}_airlines_csv.airlines_csv
+  SELECT * FROM ${prefix}_airlines_csv.airlines_csv
   UNION
-  SELECT "Z999" AS code, "Adrenaline Airways" AS description FROM ${user_id}_airlines_csv.airlines_csv a WHERE a.code = "UA"
+  SELECT "Z999" AS code, "Adrenaline Airways" AS description FROM ${prefix}_airlines_csv.airlines_csv a WHERE a.code = "UA"
   ) s ON t.code = s.code
 WHEN MATCHED AND t.code = "04Q" THEN DELETE
 WHEN MATCHED AND t.code = "05Q" THEN UPDATE SET description = "Comlux Aviation"
@@ -54,7 +54,7 @@ WHEN NOT MATCHED THEN INSERT VALUES (s.code, s.description);
 ```
 -- Review Results to ensure records were inserted, updated, and deleted
 SELECT *
-FROM ${user_id}_airlines.airlines
+FROM ${prefix}_airlines.airlines
 WHERE code IN ('UA','04Q','05Q','Z999');
 ```
    - You should see the following results after running the MERGE statement

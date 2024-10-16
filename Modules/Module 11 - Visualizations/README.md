@@ -23,7 +23,7 @@ While you've already encountered Iceberg tables in previous modules, one table (
 
 The module mentions the possibility of using CDV dashboards to create visualizations that combine data from Iceberg and Hive tables within a single query. An example DESCRIBE statement is provided for illustrative purposes.
 
-Remember to replace `${user_id}` with your actual user ID throughout the process.
+Remember to replace `${prefix}` with your actual user ID throughout the process.
 
 To begin, select the sub-module below:
 

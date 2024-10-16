@@ -19,7 +19,7 @@ The example demonstrates using Time Travel in CDP's Impala interface:
 
 The example highlights how both approaches can retrieve data from a particular point in time, ensuring you see the state of the table as it was at that moment. This functionality is useful for scenarios where regulations require access to historical data states.
 
-Remember to replace `${user_id}` and `${create_ts}` with your actual user ID and chosen timestamp, and `${snapshot_id}` with the specific snapshot ID you wish to query against.
+Remember to replace `${prefix}` and `${create_ts}` with your actual user ID and chosen timestamp, and `${snapshot_id}` with the specific snapshot ID you wish to query against.
 
 To begin, select the sub-module below:
 

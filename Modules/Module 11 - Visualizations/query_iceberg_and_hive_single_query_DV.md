@@ -56,8 +56,8 @@ It is NOT a requirement to convert all tables to Iceberg Table format.  In fact
     --
     -- [optional] SINGLE QUERY USING ICEBERG & HIVE TABLE FORMAT
     --            Uses CDV Dashboard, could also just query in HUE
-    DESCRIBE FORMATTED ${user_id}_airlines.flights;
-    DESCRIBE FORMATTED ${user_id}_airlines.unique_tickets;
+    DESCRIBE FORMATTED ${prefix}_airlines.flights;
+    DESCRIBE FORMATTED ${prefix}_airlines.unique_tickets;
 ```
 
 ![65.png](../../images/65.png)

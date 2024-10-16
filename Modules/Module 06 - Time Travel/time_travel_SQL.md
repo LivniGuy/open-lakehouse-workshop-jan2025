@@ -7,18 +7,18 @@ In the previous steps we have been loading data into the flights Iceberg table.�
 - In the next few steps execute the following in HUE for Impala VW
 
 ```
-    DESCRIBE HISTORY ${user_id}_airlines.flights;
+    DESCRIBE HISTORY ${prefix}_airlines.flights;
 
     -- SELECT DATA USING TIMESTAMP FOR SNAPSHOT
     SELECT year, count(*) 
-    FROM ${user_id}_airlines.flights
+    FROM ${prefix}_airlines.flights
       FOR SYSTEM_TIME AS OF '${create_ts}'
     GROUP BY year
     ORDER BY year desc;
 
     -- SELECT DATA USING TIMESTAMP FOR SNAPSHOT
     SELECT year, count(*) 
-    FROM ${user_id}_airlines.flights
+    FROM ${prefix}_airlines.flights
       FOR SYSTEM_VERSION AS OF ${snapshot_id}
     GROUP BY year
     ORDER BY year desc;
