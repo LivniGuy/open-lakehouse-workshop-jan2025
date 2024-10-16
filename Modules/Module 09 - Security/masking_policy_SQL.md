@@ -7,7 +7,7 @@ In this section you will create a Ranger policy to apply a Masking Policy for th
 - Execute the following in HUE for Impala VW
 
 ```
-    SELECT * FROM ${user_id}_airlines.planes;
+    SELECT * FROM ${prefix}_airlines.planes;
 ```
 
 - In results you see that the Tailnum column is in plain readable text, as shown
@@ -19,7 +19,7 @@ In this section you will create a Ranger policy to apply a Masking Policy for th
 
 - Open Hadoop SQL
 
-- Edit the Policy **\<user-id>**-iceberg-fgac (replace \<user-id> with your user id)
+- Edit the Policy **\<prefix>**-iceberg-fgac (replace \<prefix> with your user id)
 
   - On the Policy details click on Disabled to Enable the policy
 
@@ -32,7 +32,7 @@ In this section you will create a Ranger policy to apply a Masking Policy for th
 - Execute the following in HUE for Impala VW
 
 ```
-    SELECT * FROM ${user_id}_airlines.planes;
+    SELECT * FROM ${prefix}_airlines.planes;
 ```
 
 - In results you see that the Tailnum column is now been HASHed

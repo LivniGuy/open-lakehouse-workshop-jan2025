@@ -4,11 +4,11 @@ In this section use CML to run though some of the Iceberg features using Spark a
 
 **CML** 
 
-- In CML, open the Workspace named (replace \<user-id> with your user id) **\<user-id>-iceberg-ml**
+- In CML, open the Workspace named (replace \<prefix> with your user id) **\<prefix>-iceberg-ml**
 
 - Create a new Project
 
-  - Project Name: **\<user-id>**-iceberg-project (replace \<user-id> with your user id)
+  - Project Name: **\<prefix>**-iceberg-project (replace \<prefix> with your user id)
 
   - Initial Setup: Template tab, select Python from the dropdown
 
@@ -46,32 +46,32 @@ In this section use CML to run though some of the Iceberg features using Spark a
 
 ![70.png](../../images/70.png)
 
-- Copy paste the following code, replacing \<user-id> with your user id, into the Workbench Editor after the code you copied connecting to the Spark Connection (from above screen you would start on line 11).  To summarize what this code will do: 1) create an Iceberg table, 2) load data into Iceberg table, and 3) updates a value in a row (ACID MERGE) - changes “United Airlines Inc.” to “Adrenaline Airways”.  WOW!!! What a Ride!!!! 
+- Copy paste the following code, replacing \<prefix> with your user id, into the Workbench Editor after the code you copied connecting to the Spark Connection (from above screen you would start on line 11).  To summarize what this code will do: 1) create an Iceberg table, 2) load data into Iceberg table, and 3) updates a value in a row (ACID MERGE) - changes “United Airlines Inc.” to “Adrenaline Airways”.  WOW!!! What a Ride!!!! 
 
 ```
     ### Code to add
-    # Replace <user-id> with your user id in the following code
+    # Replace <prefix> with your user id in the following code
 
     # Query Raw Data Table
-    spark.sql("SELECT * FROM <user-id>_airlines_csv.airlines_csv limit 5").show()
+    spark.sql("SELECT * FROM <prefix>_airlines_csv.airlines_csv limit 5").show()
 
     # Create Iceberg Table
-    spark.sql("CREATE EXTERNAL TABLE <user-id>_airlines.airlines (code string, description string) USING ICEBERG  TBLPROPERTIES ('format-version' = '2')")
+    spark.sql("CREATE EXTERNAL TABLE <prefix>_airlines.airlines (code string, description string) USING ICEBERG  TBLPROPERTIES ('format-version' = '2')")
 
     # Load Data into Iceberg Table
-    spark.sql("INSERT INTO <user-id>_airlines.airlines SELECT * FROM <user-id>_airlines_csv.airlines_csv")
+    spark.sql("INSERT INTO <prefix>_airlines.airlines SELECT * FROM <prefix>_airlines_csv.airlines_csv")
 
     # Review Results to ensure record was updated
-    spark.sql("SELECT * FROM <user-id>_airlines.airlines WHERE code ='UA'").show()
+    spark.sql("SELECT * FROM <prefix>_airlines.airlines WHERE code ='UA'").show()
 
     # ICEBERG ACID - Change row for UA (United Airlines) to reflect new name of Adrenaline Airways 
-    spark.sql('MERGE INTO <user-id>_airlines.airlines s USING (SELECT t.code, "Adrenaline Airways" AS description FROM <user-id>_airlines.airlines t WHERE t.code = "UA") source \
+    spark.sql('MERGE INTO <prefix>_airlines.airlines s USING (SELECT t.code, "Adrenaline Airways" AS description FROM <prefix>_airlines.airlines t WHERE t.code = "UA") source \
     ON s.code = source.code \
     WHEN MATCHED AND s.description <> source.description THEN UPDATE SET s.description = source.description \
               ')
 
     # Review Results to ensure record was updated
-    spark.sql("select * from <user-id>_airlines.airlines where code ='UA'").show()
+    spark.sql("select * from <prefix>_airlines.airlines where code ='UA'").show()
 ```
 
 - Once you’ve pasted the code at the end of the connection click on Run > Run All

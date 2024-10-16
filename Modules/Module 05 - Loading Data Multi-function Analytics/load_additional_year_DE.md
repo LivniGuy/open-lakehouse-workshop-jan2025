@@ -4,7 +4,7 @@ Since Iceberg is Engine Agnostic, we are not locked into using only one engine t
 
 **CDE Insert data into Iceberg Table feature**
 
-- Open a Text Editor or IDE (I used VS Code from Microsoft).  Copy and paste the following code replacing \<user-id> with your user id.
+- Open a Text Editor or IDE (I used VS Code from Microsoft).  Copy and paste the following code replacing \<prefix> with your user id.
 
 ```
 #****************************************************************************
@@ -28,24 +28,24 @@ spark = SparkSession.builder.appName('Ingest').getOrCreate()
 #
 #-----------------------------------------------------------------------------------
 print("JOB STARTED...")
-spark.sql("INSERT INTO <user-id>_airlines.flights SELECT * FROM <user-id>_airlines_csv.flights_csv WHERE year = 2008 ")
+spark.sql("INSERT INTO <prefix>_airlines.flights SELECT * FROM <prefix>_airlines_csv.flights_csv WHERE year = 2008 ")
 
 print("JOB COMPLETED.\n\n")
 ```
 
 - Save file as “IcebergAdd2008.py”, in a location that you remember
 
-- In CDE, click on View Jobs for the Virtual Cluster named **\<user-id>-iceberg-vc**, replacing \<user-id> with your user id
+- In CDE, click on View Jobs for the Virtual Cluster named **\<prefix>-iceberg-vc**, replacing \<prefix> with your user id
 
-- Create a new Job in CDE, using the following, replacing \<user-id> with your user id.  Once completed click on “Create and Run” button
+- Create a new Job in CDE, using the following, replacing \<prefix> with your user id.  Once completed click on “Create and Run” button
 
    - Job Type: Spark 3.2.0
-   - Name: **\<user-id>**-IcebergAdd2008 
+   - Name: **\<prefix>**-IcebergAdd2008 
    - Application File: File
    - Upload File: IcebergAdd2008.py (click on upload file, and browse to find your file)
    - Select a Resource: (select) Create a Resource
 
-   - Resource Name: **\<user-id>**-IcebergAdd2008
+   - Resource Name: **\<prefix>**-IcebergAdd2008
 
 Configurations - 
 
@@ -67,7 +67,7 @@ Leave Advanced Options and Scheduling alone (default settings)
 
 ```
     SELECT year, count(*) 
-    FROM ${user_id}_airlines.flights
+    FROM ${prefix}_airlines.flights
     GROUP BY year
     ORDER BY year desc;
 ```

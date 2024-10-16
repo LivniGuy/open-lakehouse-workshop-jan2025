@@ -22,7 +22,7 @@ The guide outlines steps to run a PySpark script in CML that demonstrates ACID t
 
 This module highlights how Iceberg's ACID capabilities and Spark SQL's `MERGE` statement enable reliable data updates within Iceberg tables.
 
-Remember to replace `${user_id}` with your actual user ID throughout the process.
+Remember to replace `${prefix}` with your actual user ID throughout the process.
 
 To begin, select the sub-module below:
 
