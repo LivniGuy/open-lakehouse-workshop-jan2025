@@ -38,6 +38,6 @@ Using the transforms to allocate data rows to different partitions will make dat
 
 ## Transforms
 
-##| Transformation | Spec | Supported by SQL Engine |
+| Transformation | Spec | Supported by SQL Engine |
 | Partition by year | years(time_stamp) | year(time_stamp) | Hive and Impala |
 
