@@ -42,7 +42,7 @@ Using the transforms to allocate data rows to different partitions will make dat
 | --------------- | ---- | ----------------------- |
 | Partition by year | years(time_stamp) or year(time_stamp) | Hive and Impala |
 | Partition by month | months(time_stamp) or month(time_stamp) | Hive and Impala |
-| Partition by a date value stored as int (dateint) | days(time_stamp) | date(time_stamp) | Hive |
+| Partition by a date value stored as int (dateint) or days(time_stamp) | date(time_stamp) | Hive |
 | Partition by hours | hours(time_stamp) | Hive |
 | Partition by a dateint in hours | hours(time_stamp) | Hive |
 | Partition by hashed value mod N buckets | bucket(N,col) | Hive and Impala |
