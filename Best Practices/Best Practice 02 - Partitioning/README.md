@@ -1,2 +1,3 @@
-#  MODULE # - <MODULE_NAME>
+#  Best Practice 02 # - Partitioning
 
+## 
