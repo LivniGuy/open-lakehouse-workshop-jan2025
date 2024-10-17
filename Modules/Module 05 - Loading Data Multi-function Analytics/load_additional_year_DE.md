@@ -66,10 +66,10 @@ Leave Advanced Options and Scheduling alone (default settings)
 - Execute the following in HUE for Impala VW
 
 ```
-    SELECT year, count(*) 
-    FROM ${prefix}_airlines.flights
-    GROUP BY year
-    ORDER BY year desc;
+SELECT year, count(*)
+FROM ${prefix}_airlines.flights
+GROUP BY year
+ORDER BY year desc;
 ```
 
 - In the Results, you should see Year 2008 and a number of records along with the data for our previous years that have been loaded
