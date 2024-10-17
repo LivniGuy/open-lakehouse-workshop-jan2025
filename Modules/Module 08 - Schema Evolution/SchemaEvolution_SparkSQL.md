@@ -7,9 +7,9 @@ In this Demo, we'll be exploring in-place schema evolution.
 * Execute the folling in a CDE Session
 
 ```
-# Variables - replace <user_id> with your user id
-user_id = "<user_id>"
-odl_database_name = user_id + "_airlines"
+# Variables - replace <prefix> with your user id
+prefix = "<prefix>"
+odl_database_name = prefix + "_airlines"
 
 # CHECK TABLE FORMAT - before in-palce schema evolution
 spark.sql(f"DESCRIBE FORMATTED {odl_database_name}.airlines").show()

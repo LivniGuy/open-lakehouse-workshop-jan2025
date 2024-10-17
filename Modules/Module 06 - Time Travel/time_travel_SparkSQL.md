@@ -12,9 +12,9 @@ In the previous steps we have been loading data into the flights Iceberg table.Â
 ```
 from pyspark.sql.functions import col
 
-# Variables - replace <user_id> with your user id
-user_id = "<user_id>"
-odl_database_name = user_id + "_airlines"
+# Variables - replace <prefix> with your user id
+prefix = "<prefix>"
+odl_database_name = prefix + "_airlines"
 
 # RETURN SNAPSHOTS (History)
 history_df = spark.sql(f"SELECT * FROM {odl_database_name}.flights.snapshots")
@@ -40,9 +40,9 @@ spark.sql(f"SELECT year, count(*) FROM {odl_database_name}.flights SYSTEM_VERSIO
 from pyspark.sql.functions import col
 import datetime
 
-# Variables - replace <user_id> with your user id
-user_id = "<user_id>"
-odl_database_name = user_id + "_airlines"
+# Variables - replace <prefix> with your user id
+prefix = "<prefix>"
+odl_database_name = prefix + "_airlines"
 
 # RETURN SNAPSHOTS (History)
 history_df = spark.sql(f"SELECT * FROM {odl_database_name}.flights.snapshots")

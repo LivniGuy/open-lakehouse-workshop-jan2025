@@ -351,9 +351,9 @@ The size of the compaction is super small for this to ensure that the compaction
 ```
     # SPARK CODE to compact Airlines Iceberg Table after CDC
 
-    user_id = "<prefix>"
+    prefix = "<prefix>"
 
-    table_name = user_id + "_airlines.airlines"
+    table_name = prefix + "_airlines.airlines"
 
     spark.sql("CALL spark_catalog.system.rewrite_data_files(table => '" + table_name + "', options => map('target-file-size-bytes','50'))").show()
 ```     
