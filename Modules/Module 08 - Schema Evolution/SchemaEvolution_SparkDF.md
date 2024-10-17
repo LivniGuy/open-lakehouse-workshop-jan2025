@@ -22,8 +22,8 @@ Begin by setting up your environment variables. Replace `<prefix>` with your uni
 from pyspark.sql.functions import col
 from pyspark.sql.functions import current_timestamp
 
-# Variables - replace <user_id> with your user id
-prefix = "hol"
+# Variables - replace <prefix> with your prefix
+prefix = "<prefix>"
 odl_database_name = prefix + "_airlines"
 ```
 

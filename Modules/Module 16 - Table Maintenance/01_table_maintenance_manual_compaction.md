@@ -9,10 +9,10 @@
 ```
     # Replace <prefix> below with your user id
 
-    user_id = "<prefix>"
+    prefix = "<prefix>"
 
-    table_name = user_id + "_airlines_maint.flights"
-    insert_stmt = "INSERT INTO " + table_name + " SELECT * FROM " + user_id + "_airlines_csv.flights_csv"
+    table_name = prefix + "_airlines_maint.flights"
+    insert_stmt = "INSERT INTO " + table_name + " SELECT * FROM " + prefix + "_airlines_csv.flights_csv"
 
     # Load Data Files, to create larger number of files written for table
     for i in range(1,32):
