@@ -1,2 +1,2 @@
-#  MODULE # - <MODULE_NAME>
+#  Best Practice 05 - Storage Optimization
 
