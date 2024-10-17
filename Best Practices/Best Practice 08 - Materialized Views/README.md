@@ -1,2 +1,2 @@
-#  MODULE # - <MODULE_NAME>
+# Best Practice 08 - Materialized Views
 
