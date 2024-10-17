@@ -1,2 +1,2 @@
-#  MODULE # - <MODULE_NAME>
+# Best Practice 10 - Metadata Caching
 
