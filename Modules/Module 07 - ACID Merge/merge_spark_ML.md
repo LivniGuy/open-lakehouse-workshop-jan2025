@@ -1,84 +1,81 @@
-# SQL ACID Merge feature - shown in CML
+# ACID Merge with Spark SQL in CML
 
-In this section use CML to run though some of the Iceberg features using Spark again, by running some PySpark code.  Here we will primarily concentrate on taking advantage of the ACID capabilities of Iceberg.  Since we are using CML, this section also shows off the multi-function analytic feature of Iceberg.
+## Overview
 
-**CML** 
+In this submodule, we will demonstrate how to perform an ACID `MERGE` operation using Spark SQL in Cloudera Machine Learning (CML). This showcases Iceberg's multi-engine capabilities by running ACID transactions in a PySpark environment within CML.
 
-- In CML, open the Workspace named (replace \<prefix> with your user id) **\<prefix>-iceberg-ml**
+## Step-by-Step Guide
 
-- Create a new Project
+### Step 1. Create a CML Project
 
-  - Project Name: **\<prefix>**-iceberg-project (replace \<prefix> with your user id)
+1. Open your CML workspace and create a new project.
+   - **Project Name**: `${prefix}-iceberg-project` (replace `${prefix}` with your user ID).
+   - **Template**: Select **Python** from the dropdown.
+   - **Kernel**: Set to **Python 3.7**.
 
-  - Initial Setup: Template tab, select Python from the dropdown
+2. In the left navigation, click **Files**, and then create a new file:
+   - **File Name**: `iceberg_acid.py`
+   - Check **Open in Editor**.
 
-  - Runtime Setup: Basic
+	![Create File](../../images/66.png)
 
-    - Kernel: Python 3.7
+### Step 2. Start a CML Session
 
-- Left nav, select Files
+1. Start a new session in the Workbench:
+   - **Name**: `iceberg-acid-session`
+   - Enable **Spark** and select **Spark 3.2.0**.
 
-  - Create New File (+ New; then select New File)
+	![Start Session](../../images/67.png)
 
-    - File Name: **iceberg\_acid.py**
+2. Add the connection snippet for **Spark Data Lake** to the session.
 
-    - Check Open in Editor
+	![Connection Snippet](../../images/69.png)
 
-![66.png](../../images/66.png)
+### Step 3. Perform the ACID Merge
 
-- Start New Session
-
-  - Name: iceberg-acid-session
-
-  - Editor: Workbench
-
-  - Enable Spark, and select Spark 3.2.0 (Spark 3 is required for Iceberg functionality)
-
-![67.png](../../images/67.png)
-
-- From the Connection Code Snippet find and select the tile with TYPE = “Spark Data Lake”
-
-  - Click the ![68.png](../../images/68.png)button in the top right corner of the Code Snippet and click Close
-
-![69.png](../../images/69.png)
-
-- When you are back in the Workbench, paste the code into the Editor
-
-![70.png](../../images/70.png)
-
-- Copy paste the following code, replacing \<prefix> with your user id, into the Workbench Editor after the code you copied connecting to the Spark Connection (from above screen you would start on line 11).  To summarize what this code will do: 1) create an Iceberg table, 2) load data into Iceberg table, and 3) updates a value in a row (ACID MERGE) - changes “United Airlines Inc.” to “Adrenaline Airways”.  WOW!!! What a Ride!!!! 
-
+1. Copy and paste the following code into your Workbench Editor (replacing `${prefix}` with your user ID) to:
+   - Create an Iceberg table.
+   - Load data into the table.
+   - Perform an ACID `MERGE` to update a record.
+  
 ```
     ### Code to add
-    # Replace <prefix> with your user id in the following code
+    # Replace <prefix> with your user ID in the following code
 
     # Query Raw Data Table
-    spark.sql("SELECT * FROM <prefix>_airlines_csv.airlines_csv limit 5").show()
+    spark.sql("SELECT * FROM ${prefix}_airlines_csv.airlines_csv limit 5").show()
 
     # Create Iceberg Table
-    spark.sql("CREATE EXTERNAL TABLE <prefix>_airlines.airlines (code string, description string) USING ICEBERG  TBLPROPERTIES ('format-version' = '2')")
+    spark.sql("CREATE EXTERNAL TABLE ${prefix}_airlines.airlines (code string, description string) USING ICEBERG TBLPROPERTIES ('format-version' = '2')")
 
     # Load Data into Iceberg Table
-    spark.sql("INSERT INTO <prefix>_airlines.airlines SELECT * FROM <prefix>_airlines_csv.airlines_csv")
+    spark.sql("INSERT INTO ${prefix}_airlines.airlines SELECT * FROM ${prefix}_airlines_csv.airlines_csv")
 
     # Review Results to ensure record was updated
-    spark.sql("SELECT * FROM <prefix>_airlines.airlines WHERE code ='UA'").show()
+    spark.sql("SELECT * FROM ${prefix}_airlines.airlines WHERE code ='UA'").show()
 
-    # ICEBERG ACID - Change row for UA (United Airlines) to reflect new name of Adrenaline Airways 
-    spark.sql('MERGE INTO <prefix>_airlines.airlines s USING (SELECT t.code, "Adrenaline Airways" AS description FROM <prefix>_airlines.airlines t WHERE t.code = "UA") source \
+    # ICEBERG ACID - Change row for UA (United Airlines) to reflect new name of Adrenaline Airways
+    spark.sql('MERGE INTO ${prefix}_airlines.airlines s USING (SELECT t.code, "Adrenaline Airways" AS description FROM ${prefix}_airlines.airlines t WHERE t.code = "UA") source \
     ON s.code = source.code \
     WHEN MATCHED AND s.description <> source.description THEN UPDATE SET s.description = source.description \
-              ')
-
-    # Review Results to ensure record was updated
-    spark.sql("select * from <prefix>_airlines.airlines where code ='UA'").show()
+     ')
 ```
 
-- Once you’ve pasted the code at the end of the connection click on Run > Run All
+2. After pasting the code, click **Run > Run All** to execute the script.
 
-![71.png](../../images/71.png)
+	![Run All](../../images/71.png)
 
--  The Session output will show the following
+3. Review the session output to verify that the data has been successfully updated.
 
-![72.png](../../images/72.png)
+	![Session Output](../../images/72.png)
 
+## Summary
+
+In this submodule, you learned how to perform an ACID `MERGE` operation using Spark SQL in CML. You successfully created an Iceberg table, loaded data into it, and performed an ACID transaction to update records, showcasing Iceberg’s multi-engine and multi-function support.
+
+## Next Steps
+
+To continue your journey with Iceberg, consider exploring these related modules:
+
+- **[Module 08 - Schema Evolution](module_08.md)**: Learn how to adapt your Iceberg table schema as your data evolves, without breaking existing queries.
+- **[Module 09 - Security](module_09.md)**: Implement robust security measures to control access to your Iceberg tables and safeguard your data.

@@ -1,31 +1,53 @@
-# Module 08 - ACID
+# Module 08 - ACID Merge
 
-## ACID Transactions with Iceberg and Spark
+## Overview
 
-The module demonstrates an ACID operation using Spark SQL's `MERGE` statement on an Iceberg table (`airlines`). The `MERGE` statement combines data manipulation operations like insert, update, and delete into a single operation. Here's how it achieves the update:
+This module demonstrates the use of **ACID transactions** with Iceberg tables in Cloudera Data Platform (CDP), using the `MERGE` statement in both SQL and Spark SQL. The `MERGE` statement enables the combination of insert, update, and delete operations into a single command, ensuring data consistency and integrity in the Iceberg table.
 
-1. Matches rows in the target Iceberg table (`airlines`) with rows from a source table containing the update (code: "UA", description: "Adrenaline Airways").
-2. For matched rows where the description differs, it updates the description in the Iceberg table with the value from the source table.
+You will learn how to run an ACID `MERGE` operation using both the SQL interface in Hue and PySpark in Cloudera Machine Learning (CML), showing Iceberg's multi-engine and multi-function capabilities.
 
-**Running the Spark Script in CML:**
+### Prerequisites
 
-The guide outlines steps to run a PySpark script in CML that demonstrates ACID transactions with Iceberg tables:
+Before proceeding, ensure the following:
 
-- Create a CML project with Python 3.7 kernel and Spark 3.2.0 enabled.
-- Create a Python file and connect to a Spark Data Lake connection.
-- The provided script:
-    - Queries a raw data table.
-    - Creates an Iceberg table.
-    - Loads data into the Iceberg table.
-    - Performs an ACID update using `MERGE` to modify a specific record.
-    - Verifies the update in the Iceberg table.
+- You have access to Iceberg tables in CDP.
+- You can access Hue for SQL queries and CML for Spark queries.
+- You have the necessary permissions to run Spark and SQL jobs.
+  
+### What You'll Learn
 
-This module highlights how Iceberg's ACID capabilities and Spark SQL's `MERGE` statement enable reliable data updates within Iceberg tables.
+By the end of this module, you will be able to:
 
-Remember to replace `${prefix}` with your actual user ID throughout the process.
+- Perform ACID transactions on Iceberg tables using the `MERGE` statement.
+- Use SQL to run `MERGE` commands in Hue (Hive Virtual Warehouse).
+- Use Spark SQL to run `MERGE` commands in Cloudera Machine Learning (CML).
+- Understand how Iceberg enables reliable data updates within its tables, leveraging its ACID capabilities.
 
-To begin, select the sub-module below:
+### Methods Covered in This Module
+
+#### ACID With Iceberg Merge in SQL  
+   This submodule demonstrates how to use the SQL `MERGE` command in Hue to perform ACID transactions on an Iceberg table. You will learn how to:
+   - Create and load an Iceberg table.
+   - Run a `MERGE` command to insert, update, and delete data.
+   - Review the results of the ACID transaction.
+
+   [Go to Submodule 01 - ACID With Iceberg Merge (SQL)](merge_spark_ML.md)
+
+#### ACID With Iceberg Merge in Spark SQL  
+   This submodule demonstrates how to use Spark SQL in CML to perform ACID transactions on an Iceberg table. You will learn how to:
+   - Set up a CML project and session for running PySpark code.
+   - Create and load an Iceberg table using Spark SQL.
+   - Perform a `MERGE` operation to update specific records.
+
+   [Go to Submodule 02 - ACID With Iceberg Merge (Spark SQL)](merge_cml_spark_SQL.md)
+
+### Key Takeaways
+
+This module showcases Iceberg’s ACID transaction capabilities, using the `MERGE` statement to handle inserts, updates, and deletes within Iceberg tables. It highlights Iceberg’s multi-engine and multi-function support by demonstrating how ACID transactions can be performed using both SQL (in Hue) and Spark SQL (in CML).
+
+As always, remember to replace `${prefix}` with your actual user ID throughout the process.
 
 ## Submodules
 
-`01` [ACID With Iceberg Merge](merge_spark_ML.md)
+- `01` [ACID With Iceberg Merge (SQL)](merge_spark_ML.md)
+- `02` [ACID With Iceberg Merge (Spark SQL)](merge_cml_spark_SQL.md)
