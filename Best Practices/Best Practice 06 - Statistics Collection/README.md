@@ -1,5 +1,8 @@
 # Best Practice 06 - Staticts Collection
 
+## Overview
+Statistics collection is a best practice because it generates and stores statistics as part of the metadata for a table, ensuring that the statistics are always up to date. This eliminates the need to manually update the statistics. The statistics collected include record count, file size, value counts, null value counts, and lower and upper bounds for each column.
+
 ## Control Columns' Metrics 
 
 ## IceTip
