@@ -4,12 +4,6 @@
 
 In this module, we will explore key operations within the **Cloudera Data Catalog**, focusing on managing, discovering, and viewing metadata for Iceberg tables in an Open Data Lakehouse on the Cloudera Data Platform (CDP). The Data Catalog provides centralized control over Iceberg table metadata and offers powerful tools for data discovery and governance.
 
-### Key Operations in the Data Catalog
-
-1. **Managing Datasets**: Learn how to create, edit, and delete asset collections in the Data Catalog to maintain organized and governed datasets.
-2. **Searching for Data Assets**: Use the Data Catalog's search capabilities to discover Iceberg tables, view their metadata, and track their evolution.
-3. **Viewing Data Asset Details**: Explore detailed metadata about Iceberg tables, including schema information, lineage, and governance policies.
-
 ### Why Data Catalog is Important for Iceberg
 
 - **Centralized Metadata Management**: Iceberg tables' metadata is automatically available within the Data Catalog, providing a single source of truth.
