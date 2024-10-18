@@ -1,5 +1,9 @@
 #  Best Practice 02 # - Partitioning
 
+## Overview
+
+A solid, and well-developed Data Lakehouse powered by Iceberg assists data practitioners with their partitioning strategy allowing for efficient data pruning during query execution, enabling faster access to relevant data, and reducing the I/O required for large datasets. A best practice approach for two key areas is explained below. 
+
 ## For Data Management
 
 - There is no need to create a specific column for the partition strategy.
@@ -20,7 +24,7 @@ PARTITIONED BY SPEC (TRUNCATE(10, i), BUCKET(11, s), YEAR(ts))
 
 ## For Data Consumption
 
-- End-users do not need to specify the filter corresponding to the partion column. 
+- End-users do not need to specify the filter corresponding to the partition column. 
 
 ```sql
 SELECT * FROM tbl1
