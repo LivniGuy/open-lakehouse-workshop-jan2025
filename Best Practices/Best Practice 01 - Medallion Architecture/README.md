@@ -1,10 +1,10 @@
 #  Best Practice 01 # - Medallion Architecture
 
-![best_practice_1a.jpg](../../images/best_practice_1a.jpg)
-
 ## Overview
 
 This architecture consists of three distinct layers – bronze (raw), silver (validated), and gold (enriched) – each representing progressively higher levels of quality. 
+
+![best_practice_1a.jpg](../../images/best_practice_1a.jpg)
 
 ## Medallion Architecture at Cloudera
 
