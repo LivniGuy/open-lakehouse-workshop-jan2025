@@ -1,7 +1,7 @@
 #  Best Practice 01 # - Medallion Architecture
 
 ## Overview
-For the past several decades, there have been many iterations around building a high-performance and scalable architecture that supports the growing data demands of business users. The Medallion Architecture is not new, but it was created to help organizations architect data solutions for ever-growing data assets that can come in any format. This architecture consists of three distinct layers – **bronze (raw), silver (validated), and gold (enriched)** – each representing progressively higher levels of quality. The architecture is considered a best practice for the Data Lakehouse because of the following characteristics. 
+For the past several decades, there have been many iterations around building a high-performance and scalable architecture that supports the growing data demands of business users. The Medallion Architecture is not new, but it was created to help organizations architect data solutions for their ever-growing data assets that can come in any format. This architecture consists of three distinct layers – **bronze (raw), silver (validated), and gold (enriched)** – each representing progressively higher levels of quality. The architecture is considered a best practice for the Data Lakehouse because of the following characteristics. 
 
 - **Layered Data Organization** as stated above bronze, silver, and gold.
 - **Improved Data Quality** by processing data through multiple stages, it facilitates rigorous data cleansing and validation, ensuring that only high-quality data reaches the final layer for analysis.
