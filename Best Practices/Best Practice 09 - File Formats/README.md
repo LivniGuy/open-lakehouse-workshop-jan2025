@@ -1,5 +1,9 @@
 # Best Practice 09 - File Formats
 
+## Overview
+
+As a rule of thumb, choosing the right file format for a specific use case in a data lakehouse is a best practice because it significantly impacts the performance, storage efficiency, and overall usability of your data, allowing for optimal query speeds, cost-effective storage, and flexibility to handle different data types and access patterns depending on the analysis needs, especially when dealing with large volumes of diverse data within a single repository.
+
 | File Format | Description | Suitable for |
 | ------------ | ----------- | ------------- | 
 | Apache ORC | Columnar data format, with good compression ratio performance. | Writing-intensive tasks, like streaming and real-time ingestion. |
