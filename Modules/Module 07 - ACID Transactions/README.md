@@ -1,4 +1,4 @@
-# Module 08 - ACID Transactions
+# Module 07 - ACID Transactions
 
 ## Overview
 
@@ -49,5 +49,5 @@ As always, remember to replace `${prefix}` with your actual user ID throughout t
 
 ## Submodules
 
-- `01` [ACID With Iceberg Merge (SQL)](acid_merge_sql.md)
+- `01` [ACID With Iceberg Merge (SQL)](acid_merge_SQL.md)
 - `02` [ACID With Iceberg Merge (Spark SQL)](acid_merge_SparkSQL.md)
