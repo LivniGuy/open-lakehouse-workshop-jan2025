@@ -1,4 +1,4 @@
-# Module 08 - ACID Merge
+# Module 08 - ACID Transactions
 
 ## Overview
 
