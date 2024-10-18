@@ -17,7 +17,7 @@ Before running this submodule, ensure that:
 
 ## Step-by-Step Guide
 
-### Step 1. Prepare the Spark Script
+### Step 1: Prepare the Spark Script
 
 Open a text editor (e.g., VS Code) and create a Python script that will load data from AWS S3 into the Iceberg table.
 
@@ -52,7 +52,7 @@ print("JOB COMPLETED.\n\n")
 
 Save the file as `IcebergAdd2008.py` in a location you can easily access.
 
-### Step 2. Create and Run the Spark Job in CDE
+### Step 2: Create and Run the Spark Job in CDE
 
 1. Navigate to the CDE console and click on **View Jobs** for your virtual cluster named **<prefix>-iceberg-vc**, replacing `<prefix>` with your user ID.
 2. Click **Create Job** and configure the following settings:
@@ -66,14 +66,14 @@ Save the file as `IcebergAdd2008.py` in a location you can easily access.
 
    ![Upload File (Python)](../../images/63.png)
 
-### Step 3. Monitor Job Execution
+### Step 3: Monitor Job Execution
 
 1. Go to **Job Runs** in CDE and click on the job you just submitted.
 2. Review the logs and run history to confirm successful execution.
 
    ![CDE Job Run](../../images/62.png)
 
-### Step 4. Verify the Data in CDW/Hue
+### Step 4: Verify the Data in CDW/Hue
 
 Once the Spark job completes, verify that the data has been added to the Iceberg table using Impala in CDW/Hue.
 
