@@ -31,7 +31,7 @@ By the end of this module, you will be able to:
    - Run a `MERGE` command to insert, update, and delete data.
    - Review the results of the ACID transaction.
 
-   [Go to Submodule 01 - ACID With Iceberg Merge (SQL)](merge_spark_ML.md)
+   [Go to Submodule 01 - ACID With Iceberg Merge (SQL)](acid_merge_SQL.md)
 
 #### ACID With Iceberg Merge in Spark SQL  
    This submodule demonstrates how to use Spark SQL in CML to perform ACID transactions on an Iceberg table. You will learn how to:
@@ -39,7 +39,7 @@ By the end of this module, you will be able to:
    - Create and load an Iceberg table using Spark SQL.
    - Perform a `MERGE` operation to update specific records.
 
-   [Go to Submodule 02 - ACID With Iceberg Merge (Spark SQL)](merge_cml_spark_SQL.md)
+   [Go to Submodule 02 - ACID With Iceberg Merge (Spark SQL)](acid_merge_SparkSQL.md)
 
 ### Key Takeaways
 
@@ -49,5 +49,5 @@ As always, remember to replace `${prefix}` with your actual user ID throughout t
 
 ## Submodules
 
-- `01` [ACID With Iceberg Merge (SQL)](merge_spark_ML.md)
-- `02` [ACID With Iceberg Merge (Spark SQL)](merge_cml_spark_SQL.md)
+- `01` [ACID With Iceberg Merge (SQL)](acid_merge_sql.md)
+- `02` [ACID With Iceberg Merge (Spark SQL)](acid_merge_SparkSQL.md)

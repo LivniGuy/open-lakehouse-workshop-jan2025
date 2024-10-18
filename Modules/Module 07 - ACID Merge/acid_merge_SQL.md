@@ -80,4 +80,4 @@ In this submodule, you learned how to perform an ACID `MERGE` operation on an Ic
 
 To continue exploring ACID transactions with Iceberg, proceed to the next submodule:
 
-- [ACID Merge with Spark SQL in CML](merge_spark_ML.md)
+- [ACID Merge with Spark SQL in CML](acid_merge_SparkSQL.md)
