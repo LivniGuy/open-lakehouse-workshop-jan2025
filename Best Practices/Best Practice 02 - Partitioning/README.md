@@ -40,7 +40,7 @@ AND month = ?;
 Whenever possible, leverage the Hidden Partitioning capabilities Iceberg tables deliver. In most cases, tables are partitioned by an attribute that represents time. 
 Using the transforms to allocate data rows to different partitions will make data ingestion and data consumption easier.
 
-## Transforms
+### Transforms
 
 | Transformation | Spec | Supported by SQL Engine |
 | --------------- | ---- | ----------------------- |
