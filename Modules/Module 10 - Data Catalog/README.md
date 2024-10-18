@@ -6,9 +6,17 @@ In this module, we will explore key operations within the **Cloudera Data Catalo
 
 ### Why Data Catalog is Important for Iceberg
 
-- **Centralized Metadata Management**: Iceberg tables' metadata is automatically available within the Data Catalog, providing a single source of truth.
-- **Efficient Data Discovery**: Quickly locate Iceberg tables and explore their structure, history, and partitioning details.
-- **Comprehensive Governance**: Use Ranger integration to apply access controls, ensuring data governance compliance across your organization.
+#### 1. Centralized Metadata Management
+
+- Iceberg table metadata is automatically available within the Data Catalog, providing a single source of truth.
+
+#### 2. Efficient Data Discovery
+
+- Quickly locate Iceberg tables and explore their structure, history, and partitioning details.
+
+#### 3. Comprehensive Governance
+
+- Use Ranger integration to apply access controls, ensuring data governance compliance across your organization.
 
 ### Methods Covered in This Module
 
