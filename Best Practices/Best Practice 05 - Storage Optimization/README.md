@@ -7,7 +7,9 @@ Organizations can optimize Iceberg storage by:
 - **Proper Partitioning** by designing partitions based on query patterns to effectively prune irrelevant data.
 - **Data File Consolidation** by regularly compacting small data files into larger ones to improve query performance.
 - **Snapshot Management** by cleaning up old snapshots to avoid unnecessary storage usage,
-- **Leverage Statistics** as a rule of thumb, utilize data statistics to further optimize query execution plans. 
+- **Leverage Statistics** as a rule of thumb, utilize data statistics to further optimize query execution plans.
+
+Cloudera believes that workloads will be more complex, and harder to manage only based on the amount of data that will be required to process (e.g., unstructured, semi-structured, and structured). This demand needs to be placed at the forefront of every architectural design which is why is considered a best practice that can help organizations get a much bigger ROI when doing your data lakehouse implementations.  
 
 ## IceTip
 Understand the data retention requirements according to the use case, project, business needs, or local regulations. Then automate jobs to expire the snapshots that are no longer needed periodically.
