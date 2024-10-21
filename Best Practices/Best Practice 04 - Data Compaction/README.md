@@ -8,6 +8,8 @@ Compaction reduces the number of small files by merging them into larger files, 
 - **Facilitated Data Cleanup** Compaction can be part of data lifecycle management processes, helping to identify and remove outdated or unnecessary data, thus improving overall data quality.
 - **Compatibility with Evolving Workloads** As data access patterns and workloads evolve, regular compaction ensures that the data lakehouse can continue to perform efficiently under varying loads.
 
+It must be mentioned that Data Compaction is not new, this best practice has been used since the early 60's. Way back from flat files and record structures to the latest and greatest Apache Iceberg. Over the past decades, data compaction has evolved from database management systems (e.g., 80s), data warehousing (e.g., 90s), columnar storage formats (e.g., 2000s), big data technologies (e.g., 2010s), data lake paradigms (e.g., 2015s onward), and it will continue to evolve. Having a good data compaction strategy will be essential for many reasons and some stated above. 
+
 ![best_practice_4a.jpg](../../images/best_practice_4a.jpg)
 
 ## 1. Strategy
