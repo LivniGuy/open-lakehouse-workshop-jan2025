@@ -4,6 +4,8 @@
 
 A solid, and well-developed Data Lakehouse powered by Iceberg assists data practitioners with their partitioning strategy allowing for efficient data pruning during query execution, enabling faster access to relevant data, and reducing the I/O required for large datasets. A best practice approach for two key areas is explained below. 
 
+Cloudera is an advocate of Industry Best Standards, and designing resilient, well-architected, and scalable data models that benefit all our customers is key. Learning and using partitions should be part of your data lakehouse development strategy and best practice. 
+
 ## For Data Management
 
 - There is no need to create a specific column for the partition strategy.
@@ -37,7 +39,7 @@ AND month = ?;
 - Minimize the risk of full scans, as Iceberg statistics are leveraged during query execution. 
 
 ## IceTip
-Whenever possible, leverage the Hidden Partitioning capabilities Iceberg tables deliver. In most cases, tables are partitioned by an attribute that represents time. 
+Whenever possible, leverage the **Hidden Partitioning** capabilities Iceberg tables deliver. In most cases, tables are partitioned by an attribute that represents time. 
 Using the transforms to allocate data rows to different partitions will make data ingestion and data consumption easier.
 
 ### Transforms
