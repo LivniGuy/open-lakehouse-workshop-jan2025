@@ -6,7 +6,7 @@ Caching metadata is a best practice for data lakehouses because it significantly
 
 - **Faster Queries** By caching deserialized Avro files in memory, queries can avoid the decompression and parsing stages, which often slow down smaller queries. This leads to quicker query execution and can help reduce operational costs.
 - **Optimized Query Performance** Iceberg's metadata provides valuable information about schema, partitioning, and data location, which can be leveraged to optimize query performance.
-- **Enhanced Data Governance** Apache Iceberg's metadata tables can be accessed using Dremio's SQL syntax, facilitating better data governance, ensuring data integrity, and aiding in regulatory compliance.
+- **Enhanced Data Governance** Apache Iceberg's metadata tables can be accessed using SQL syntax, facilitating better data governance, ensuring data integrity, and aiding in regulatory compliance.
 
 ## Metadata Caching
 
