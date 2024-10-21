@@ -89,6 +89,8 @@ SELECT * FROM airlines_data.carriers
 - **Query Cloudera Iceberg Table with no right to read the table:** Add a new cell (click "+" button in Session toolbar)
    - In the cell copy/paste the following and then ">| RUN" the cell.
 
+   - This will error out, as the security policy will block this access.
+
 ```
 %%sql
 SELECT * FROM airlines_data.airports
