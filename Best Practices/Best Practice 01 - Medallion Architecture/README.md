@@ -13,6 +13,8 @@ For the past several decades, there have been many iterations around building a 
 
 ## Medallion Architecture at Cloudera
 
+At Cloudera, we offer different types of architectures for individual use cases in streaming, data engineering, analytics, and Generative AI, to name a few. Cloudera also offers architecture that spans data locations like cloud and on-prem that includes several of the major cloud providers like AWS, Azure, and GCP. The graph below depicts what services you may need to implement the Medallion Architecture using Cloudera. 
+
 ![best_practice_1b.jpg](../../images/best_practice_1b.jpg)
 
 ## IceTip 
