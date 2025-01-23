@@ -9,15 +9,15 @@ https://github.infra.cloudera.com/Guy/hol-002-open-lakehouse/blob/main/Modules/M
 
 *Run Submodule 01 only*
 
-### Step 2 - Loading data with additional tools
+### Step 2 - Loading data to the Iceberg table
 https://github.infra.cloudera.com/Guy/hol-002-open-lakehouse/blob/main/Modules/Module%2003%20-%20Loading%20Data/README.md
 
 *Run Submodule 01 only*
 
-### Step 3 - Explore data with SQL
+### Step 3 - Explore data with SQL - Optional
 Run some SQL commands to show the data
 
-### Step 5 - Partition evolution
+### Step 4 - Partition evolution
 https://github.infra.cloudera.com/Guy/hol-002-open-lakehouse/blob/main/Modules/Module%2004%20-%20Partition%20Evolution/README.md
 
 *Run Submodule 01 only*
