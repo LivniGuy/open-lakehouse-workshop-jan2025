@@ -22,27 +22,27 @@ https://github.infra.cloudera.com/Guy/hol-002-open-lakehouse/blob/main/Modules/M
 
 *Run Submodule 01 only*
 
-### Step 6 - Time Travel
+### Step 5 - Time Travel
 https://github.infra.cloudera.com/Guy/hol-002-open-lakehouse/blob/main/Modules/Module%2006%20-%20Time%20Travel/README.md
 
 *Run Submodule 01 only*
 
-### Step 7 - ACID Transactions - Optional
+### Step 6 - ACID Transactions - Optional
 https://github.infra.cloudera.com/Guy/hol-002-open-lakehouse/blob/main/Modules/Module%2007%20-%20ACID%20Transactions/README.md
 
 *Run Submodule 01 only*
 
-### Step 8 - Schema Evolution
+### Step 7 - Schema Evolution
 https://github.infra.cloudera.com/Guy/hol-002-open-lakehouse/blob/main/Modules/Module%2008%20-%20Schema%20Evolution/README.md
 
 *Run Submodule 01 only*
 
-### Step 9 - Data Visualization
+### Step 8 - Data Visualization
 https://github.infra.cloudera.com/Guy/hol-002-open-lakehouse/blob/main/Modules/Module%2011%20-%20Visualizations/README.md
 
 *Run Submodule 01 only*
 
-### Step 10 - Ingest data with NiFi - OPTIONAL - TBD
+### Step 9 - Ingest data with NiFi - OPTIONAL - TBD
 https://github.infra.cloudera.com/Guy/hol-002-open-lakehouse/blob/main/Modules/Module%2013%20-%20Ingestion/README.md
 
 *Run Submodule 01 only*
