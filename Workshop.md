@@ -1,5 +1,6 @@
 ### Step 0 - Setup source tables:
 Run the following in a Hive warehouse (Via HUE):
+
 https://github.infra.cloudera.com/Guy/hol-002-open-lakehouse/blob/main/Assets/SQL/cdw_hive_vw_setup.sql
 
 
