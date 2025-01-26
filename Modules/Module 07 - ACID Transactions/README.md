@@ -39,7 +39,7 @@ By the end of this module, you will be able to:
    - Create and load an Iceberg table using Spark SQL.
    - Perform a `MERGE` operation to update specific records.
 
-   [Go to Submodule 02 - ACID With Iceberg Merge (Spark SQL)](acid_merge_SparkSQL.md)
+   [~~Go to Submodule 02 - ACID With Iceberg Merge (Spark SQL)~~](acid_merge_SparkSQL.md)
 
 ### Key Takeaways
 
@@ -50,4 +50,4 @@ As always, remember to replace `${prefix}` with your actual user ID throughout t
 ## Submodules
 
 - `01` [ACID With Iceberg Merge (SQL)](acid_merge_SQL.md)
-- `02` [ACID With Iceberg Merge (Spark SQL)](acid_merge_SparkSQL.md)
+- `02` [~~ACID With Iceberg Merge (Spark SQL)~~](acid_merge_SparkSQL.md)

@@ -49,6 +49,6 @@ Choose one of the following submodules to get started:
 
 `01` [Load Iceberg Tables Using SQL](load_iceberg_tbl_SQL.md)
 
-`02` [Load Iceberg Tables Using Spark SQL](load_iceberg_tbl_SparkSQL.md)
+`02` [~~Load Iceberg Tables Using Spark SQL~~](load_iceberg_tbl_SparkSQL.md)
 
-`03` [Load Iceberg Tables Using Spark DataFrames](load_iceberg_tbl_SparkDF.md)
+`03` [~~Load Iceberg Tables Using Spark DataFrames~~](load_iceberg_tbl_SparkDF.md)

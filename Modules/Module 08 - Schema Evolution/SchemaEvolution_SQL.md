@@ -31,7 +31,7 @@ Use the following query to insert data into the new schema of the `airlines` tab
 
 ```
 INSERT INTO ${prefix}_airlines.airlines
-VALUES("Z999","Adrenaline Airways","NEW",now());
+VALUES("Z999","Adrenaline Airways","NEW",current_timestamp());
 ```
 
 ### Step 4: Query the Table to See Old and New Data

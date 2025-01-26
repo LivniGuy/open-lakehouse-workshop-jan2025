@@ -50,7 +50,7 @@ By the end of this module, you will be able to:
    - Retrieve and filter snapshot data from an Iceberg table.
    - Query data based on snapshot IDs or timestamps.
 
-   [Go to Submodule 02 - Time Travel Using Spark SQL](time_travel_spark_SQL.md)
+   [~~Go to Submodule 02 - Time Travel Using Spark SQL~~](time_travel_spark_SQL.md)
 
 ## Key Takeaways
 
@@ -61,4 +61,4 @@ As always, remember to replace `${prefix}` with your actual user ID throughout t
 ## Submodules
 
 - `01` [Time Travel Using SQL](time_travel_SQL.md)
-- `02` [Time Travel Using Spark SQL](time_travel_spark_SQL.md)
+- `02` [~~Time Travel Using Spark SQL~~](time_travel_spark_SQL.md)

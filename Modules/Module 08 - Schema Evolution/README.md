@@ -51,5 +51,5 @@ This method uses Spark DataFrames to evolve schemas programmatically within an I
 Choose one of the following submodules to get started:
 
 - `01` [Evolve Iceberg Table Schema Using SQL](SchemaEvolution_SQL.md)
-- `02` [Evolve Iceberg Table Schema Using Spark SQL](SchemaEvolution_SparkSQL.md)
-- `03` [Evolve Iceberg Table Schema Using Spark DataFrames](SchemaEvolution_SparkDF.md)
+- `02` [~~Evolve Iceberg Table Schema Using Spark SQL~~](SchemaEvolution_SparkSQL.md)
+- `03` [~~Evolve Iceberg Table Schema Using Spark DataFrames~~](SchemaEvolution_SparkDF.md)

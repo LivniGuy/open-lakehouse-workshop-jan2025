@@ -1,3 +1,4 @@
+### Please make sure you use your assigned user id, change ${prefix} with your user id, ask your lab guide for instructions if needed 
 ### Step 0 - Setup source tables:
 Run the following in a Hive warehouse (Via HUE):
 
@@ -27,7 +28,7 @@ https://github.infra.cloudera.com/Guy/hol-002-open-lakehouse/blob/main/Modules/M
 
 *Run Submodule 01 only*
 
-### Step 6 - ACID Transactions - Optional
+### Step 6 - ACID Transactions
 https://github.infra.cloudera.com/Guy/hol-002-open-lakehouse/blob/main/Modules/Module%2007%20-%20ACID%20Transactions/README.md
 
 *Run Submodule 01 only*
@@ -39,10 +40,3 @@ https://github.infra.cloudera.com/Guy/hol-002-open-lakehouse/blob/main/Modules/M
 
 ### Step 8 - Data Visualization
 https://github.infra.cloudera.com/Guy/hol-002-open-lakehouse/blob/main/Modules/Module%2011%20-%20Visualizations/README.md
-
-*Run Submodule 01 only*
-
-### Step 9 - Ingest data with NiFi - OPTIONAL - TBD
-https://github.infra.cloudera.com/Guy/hol-002-open-lakehouse/blob/main/Modules/Module%2013%20-%20Ingestion/README.md
-
-*Run Submodule 01 only*

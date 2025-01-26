@@ -41,5 +41,5 @@ This method involves using Spark DataFrames to evolve partitions within an Icebe
 Choose one of the following submodules to get started:
 
 `01` [Partition Evolution Using SQL](partition_evolution_SQL.md)  
-`02` [Partition Evolution Using Spark SQL](partition_evolution_SparkSQL.md)  
-`03` [Partition Evolution Using Spark DataFrames](partition_evolution_SparkDF.md)
+`02` [~~Partition Evolution Using Spark SQL~~](partition_evolution_SparkSQL.md)  
+`03` [~~Partition Evolution Using Spark DataFrames~~](partition_evolution_SparkDF.md)
