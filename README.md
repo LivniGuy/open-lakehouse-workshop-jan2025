@@ -2,7 +2,7 @@
 ### Step 0 - Setup source tables:
 Run the following in a Hive warehouse (Via HUE):
 
-[cdw_hive_vw_setup.sql](Assets/SQL/cdw_hive_vw_setup.sql)
+[Setup source tables](Assets/SQL/cdw_hive_vw_setup.sql)
 
 
 
