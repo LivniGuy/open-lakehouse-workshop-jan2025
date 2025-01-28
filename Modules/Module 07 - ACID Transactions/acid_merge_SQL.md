@@ -4,6 +4,8 @@
 
 In this submodule, we will leverage the ACID capabilities of Iceberg using the **SQL MERGE** command. This feature allows for the combination of insert, update, and delete operations in a single command, ensuring data integrity and consistency within the Iceberg table.
 
+:warning: Make sure you are using Hue with **Hive**. :warning:
+
 ## Step-by-Step Guide
 
 ### Step 1. Create the Iceberg Table
