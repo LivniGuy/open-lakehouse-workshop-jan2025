@@ -5,3 +5,6 @@
 images/.DS_Store
 site/
 venv
+Setup/
+Setup/*
+Setup/**
