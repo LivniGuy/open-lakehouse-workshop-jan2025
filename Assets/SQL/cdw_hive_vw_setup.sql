@@ -1,7 +1,7 @@
 -- CREATE DATABASES
-CREATE DATABASE ${prefix}_airlines_csv;
-CREATE DATABASE ${prefix}_airlines;
-CREATE DATABASE ${prefix}_airlines_maint;
+CREATE DATABASE if not exists ${prefix}_airlines_csv;
+CREATE DATABASE if notexists ${prefix}_airlines;
+CREATE DATABASE if not exists ${prefix}_airlines_maint;
 
 -- CREATE CSV TABLES
 drop table if exists ${prefix}_airlines_csv.flights_csv;
