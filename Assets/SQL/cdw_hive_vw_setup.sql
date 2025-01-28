@@ -1,6 +1,6 @@
 -- CREATE DATABASES
 CREATE DATABASE if not exists ${prefix}_airlines_csv;
-CREATE DATABASE if notexists ${prefix}_airlines;
+CREATE DATABASE if not exists ${prefix}_airlines;
 CREATE DATABASE if not exists ${prefix}_airlines_maint;
 
 -- CREATE CSV TABLES
