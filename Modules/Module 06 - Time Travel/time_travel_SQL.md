@@ -8,7 +8,7 @@ In the previous steps, we have been loading data into the `flights` Iceberg tabl
 
 ### Step 1: Execute Time Travel Queries
 
-In the following steps, execute these commands in Hue for Impala VW:
+In the following steps, execute these commands in **:rotating_light:Hue for Impala:rotating_light:** VW: 
 
 ```
     DESCRIBE HISTORY ${prefix}_airlines.flights;
