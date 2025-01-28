@@ -83,6 +83,6 @@ You have successfully created a partitioned Iceberg table in CDP using SQL. This
 
 To continue, select one of the following modules or submodules based on your requirements:
 
-- [Module 03 - Loading Data: Load Iceberg Table Using SQL](load_iceberg_tbl_SQL.md)
-- [Module 13 - Loading New Data to Flights Using DataFrame](load_new_data_to_flights_DF.md)
+- [~~Module 03 - Loading Data: Load Iceberg Table Using SQL~~](load_iceberg_tbl_SQL.md)
+- [~~Module 13 - Loading New Data to Flights Using DataFrame~~](load_new_data_to_flights_DF.md)
 
