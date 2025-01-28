@@ -52,4 +52,4 @@ In this submodule, you learned how to evolve the schema of an Iceberg table in-p
 
 To continue exploring schema evolution in Iceberg, proceed to the next submodule:
 
-- `02` **[Evolve Iceberg Table Schema Using Spark SQL](SchemaEvolution_SparkSQL.md)**
+- `02` **[~~Evolve Iceberg Table Schema Using Spark SQL~~](SchemaEvolution_SparkSQL.md)**

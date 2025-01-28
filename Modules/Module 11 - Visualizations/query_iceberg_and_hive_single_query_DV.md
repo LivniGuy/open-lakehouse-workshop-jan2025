@@ -50,6 +50,6 @@ In this submodule, you've learned how to explore visualizations in CDV that comb
 
 To continue working with Iceberg and Hive tables, you may want to explore:
 
-- **[Module 05 - Loading Data for Multi-function Analytics](Module%2005%20-%20Loading%20Data/README.md)**: Explore advanced techniques for loading data into Iceberg tables.
+- **[~~Module 05 - Loading Data for Multi-function Analytics~~](Module%2005%20-%20Loading%20Data/README.md)**: Explore advanced techniques for loading data into Iceberg tables.
 
-- **[Module 06 - Time Travel](Module%2006%20-%20Time%20Travel/README.md)**: Leverage Iceberg’s time travel capabilities to query historical data.
+- **[~~Module 06 - Time Travel~~](Module%2006%20-%20Time%20Travel/README.md)**: Leverage Iceberg’s time travel capabilities to query historical data.

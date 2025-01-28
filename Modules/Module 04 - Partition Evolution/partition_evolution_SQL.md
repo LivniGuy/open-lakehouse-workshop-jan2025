@@ -103,10 +103,10 @@ You have successfully evolved the partitions of your Iceberg table in-place usin
 
 To deepen your understanding of partition evolution, consider exploring the following:
 
-- **[Partition Evolution Using Spark SQL](partition_evolution_SparkSQL.md):** Learn how to achieve partition evolution using Spark SQL, and how Spark's capabilities can complement this process.
+- **[~~Partition Evolution Using Spark SQL~~](partition_evolution_SparkSQL.md):** Learn how to achieve partition evolution using Spark SQL, and how Spark's capabilities can complement this process.
 
-- **[Partition Evolution Using Spark DataFrames](partition_evolution_SparkDF.md):** Explore how to programmatically manage partitions using Spark DataFrames, providing additional flexibility and control.
+- **[~~Partition Evolution Using Spark DataFrames~~](partition_evolution_SparkDF.md):** Explore how to programmatically manage partitions using Spark DataFrames, providing additional flexibility and control.
 
-- **[Module 05 - Loading Data Multi-function Analytics](Module%2005%20-%20Loading%20Data%20Multi-function%20Analytics/README.md):** If you're interested in seeing how Iceberg's partitioning features support multi-function analytics, this module will be a great next step.
+- **[~~Module 05 - Loading Data Multi-function Analytics~~](Module%2005%20-%20Loading%20Data%20Multi-function%20Analytics/README.md):** If you're interested in seeing how Iceberg's partitioning features support multi-function analytics, this module will be a great next step.
 
 These submodules and modules will help you build on the foundational knowledge you've gained and explore more advanced capabilities of Iceberg tables.

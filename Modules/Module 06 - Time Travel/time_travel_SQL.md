@@ -63,4 +63,4 @@ In this submodule, you learned how to use Iceberg’s **Time Travel** feature in
 
 To continue exploring Iceberg Time Travel with Spark SQL, proceed to the next submodule:
 
-- `02` [Time Travel Using Spark SQL](time_travel_spark_SQL.md)
+- `02` [~~Time Travel Using Spark SQL~~](time_travel_spark_SQL.md)

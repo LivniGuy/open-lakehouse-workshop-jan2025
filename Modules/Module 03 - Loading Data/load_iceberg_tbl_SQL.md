@@ -45,5 +45,5 @@ You have successfully loaded data into an Iceberg table using SQL. The data is n
 
 To continue with more advanced data loading methods, explore the other submodules in this module:
 
-- [Load Data into Iceberg Table Using Spark SQL](load_iceberg_tbl_SparkSQL.md)
-- [Load Data into Iceberg Table Using Spark DataFrames](load_iceberg_tbl_SparkDF.md)
+- [~~Load Data into Iceberg Table Using Spark SQL~~](load_iceberg_tbl_SparkSQL.md)
+- [~~Load Data into Iceberg Table Using Spark DataFrames~~](load_iceberg_tbl_SparkDF.md)
