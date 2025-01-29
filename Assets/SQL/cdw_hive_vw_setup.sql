@@ -1,3 +1,6 @@
+-- Make sure you set prefix to userXXX as instructed  -- 
+SELECT ASSERT_TRUE(current_user() = '${prefix}');
+
 -- CREATE DATABASES
 CREATE DATABASE if not exists ${prefix}_airlines_csv;
 CREATE DATABASE if not exists ${prefix}_airlines;
